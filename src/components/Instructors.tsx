@@ -1,0 +1,69 @@
+import Image from "next/image";
+
+export default function Instructors() {
+  const instructors = [
+    {
+      image: "/about-us/instructors/1.jpg",
+      name: "Dr. Sarah Thompson",
+      role: "Director of Endodontics",
+    },
+    {
+      image: "/about-us/instructors/2.jpg",
+      name: "Dr. Marcus Chen",
+      role: "Implantology Lead",
+    },
+    {
+      image: "/about-us/instructors/3.jpg",
+      name: "Dr. Elena Rodriguez",
+      role: "Restorative Lead",
+    },
+  ];
+
+  return (
+    <section className="w-full bg-white py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
+        
+        {/* Section Heading */}
+        <h2 className="text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-darkBlueText leading-[1.15] tracking-tight mb-4 text-center">
+          Meet Our Instructors
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-gray-500 font-regular_18pt text-base md:text-[17px] leading-relaxed max-w-xl text-center mb-16">
+          Our curriculum is developed and led by world-class clinicians who are pioneers in their respective fields.
+        </p>
+
+        {/* Instructors Grid */}
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+          {instructors.map((instructor, idx) => (
+            <div key={idx} className="flex flex-col items-start">
+              
+              {/* Image Container with Mint Green Top Accent Bar */}
+              <div className="relative w-full rounded-[24px] overflow-hidden mb-6 border-t-4 border-greenBg bg-gray-100 shadow-sm">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src={instructor.image}
+                    alt={instructor.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Text Info */}
+              <h3 className="text-xl md:text-[22px] font-semi_bold_24pt text-darkBlueText mb-1">
+                {instructor.name}
+              </h3>
+              <p className="text-gray-500 font-regular_18pt text-sm">
+                {instructor.role}
+              </p>
+
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
