@@ -4,6 +4,7 @@ import OurValues from "@/components/OurValues";
 import OurApproach from "@/components/OurApproach";
 import Team from "@/components/Team";
 import Instructors from "@/components/Instructors";
+import StudentSupport from "@/components/StudentSupport";
 import Contributors from "@/components/Contributors";
 import Newsletter from "@/components/Newsletter";
 
@@ -73,6 +74,9 @@ export default function AboutPage() {
 
       {/* Instructors Component */}
       <Instructors />
+
+      {/* Student Support Section */}
+      <StudentSupport />
 
       {/* Contributors Section (uses bg-greyBg) */}
       <Contributors />
