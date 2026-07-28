@@ -1,5 +1,7 @@
 import EducationHero from "@/components/EducationHero";
 import EducationCategories from "@/components/EducationCategories";
+import LearningFormats from "@/components/LearningFormats";
+import CertificatePathways from "@/components/CertificatePathways";
 import Featured from "@/components/Featured";
 import FAQ from "@/components/FAQ";
 import Newsletter from "@/components/Newsletter";
@@ -17,6 +19,12 @@ export default function EducationPage() {
 
       {/* Course Categories Section */}
       <EducationCategories />
+
+      {/* Learning Formats Section */}
+      <LearningFormats />
+
+      {/* Certificate Pathways Section */}
+      <CertificatePathways />
 
       {/* Featured Courses Section */}
       <Featured />
