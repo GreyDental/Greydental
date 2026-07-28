@@ -12,35 +12,35 @@ export default function EducationHero() {
   ];
 
   return (
-    <section className="w-full bg-white py-16 md:py-24 border-b border-border/40">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section className="w-full bg-white py-12 sm:py-16 md:py-24 border-b border-border/40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-16 items-center">
         
         {/* Left Column: Text & CTA Content */}
-        <div className="flex flex-col items-start max-w-xl">
+        <div className="flex flex-col items-start max-w-xl w-full flex-1">
           
           {/* Pill Badge */}
-          <div className="bg-white border border-gray-200/80 px-5 py-2 rounded-full mb-8 shadow-sm">
-            <span className="text-[12px] font-semi_bold_24pt tracking-[0.14em] text-darkBlueText uppercase">
+          <div className="bg-white border border-gray-200/80 px-4 sm:px-5 py-2 rounded-full mb-6 sm:mb-8 shadow-sm">
+            <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.14em] text-darkBlueText uppercase">
               DENTAL EDUCATION
             </span>
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-[54px] font-semi_bold_24pt text-darkBlueText leading-[1.14] tracking-tight mb-6">
+          <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-[54px] font-semi_bold_24pt text-darkBlueText leading-[1.14] tracking-tight mb-5 sm:mb-6">
             Choose your dental learning pathway
           </h1>
 
           {/* Subtitle */}
-          <p className="text-gray-500 font-regular_18pt text-[16px] md:text-[18px] leading-relaxed mb-10">
+          <p className="text-gray-500 font-regular_18pt text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed mb-8 sm:mb-10">
             Learn through self-paced online courses, hybrid programs, live workshops, and accredited certification pathways - all built around real clinical caseloads.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mb-14">
-            <motion.div whileHover="hover" className="inline-block">
+          <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-10 sm:mb-14 w-full">
+            <motion.div whileHover="hover" className="inline-block w-full sm:w-auto">
               <Link
-                href="#courses"
-                className="bg-blueBg text-white px-6 py-3.5 rounded-lg font-semi_bold_24pt text-[15px] flex items-center gap-2 hover:bg-blueBtnBg transition-colors"
+                href="/courses"
+                className="bg-blueBg text-white px-6 py-3.5 rounded-lg font-semi_bold_24pt text-[15px] flex items-center justify-center gap-2 hover:bg-blueBtnBg transition-colors w-full"
               >
                 <span>Browse Courses</span>
                 <motion.svg
@@ -64,19 +64,16 @@ export default function EducationHero() {
 
             <Link
               href="#pathways"
-              className="border border-gray-300 hover:bg-gray-50 group inline-flex items-start justify-center h-[52px] px-6 rounded-lg text-[15px] font-semi_bold_24pt text-darkBlueText overflow-hidden transition-colors duration-200"
+              className="border border-gray-300 hover:bg-gray-50 inline-flex items-center justify-center h-[52px] px-6 rounded-lg text-[15px] font-semi_bold_24pt text-darkBlueText transition-colors duration-200 w-full sm:w-auto"
             >
-              <span className="flex flex-col transition-transform duration-300 group-hover:-translate-y-1/2">
-                <span className="h-[52px] flex items-center">View Certificate Pathways</span>
-                <span className="h-[52px] flex items-center">View Certificate Pathways</span>
-              </span>
+              View Certificate Pathways
             </Link>
           </div>
 
           {/* Stats Row */}
-          <div className="flex flex-wrap items-center gap-10 sm:gap-14 pt-4 border-t border-gray-100 w-full">
+          <div className="flex flex-row flex-wrap items-start gap-8 sm:gap-12 md:gap-14 pt-4 border-t border-gray-100 w-full">
             {stats.map((stat, idx) => (
-              <div key={idx} className="flex flex-col">
+              <div key={idx} className="flex flex-col min-w-[96px]">
                 <span className="text-3xl md:text-4xl font-semi_bold_24pt text-darkBlueText mb-1">
                   {stat.number}
                 </span>
@@ -89,13 +86,11 @@ export default function EducationHero() {
 
         </div>
 
-        {/* Right Column: Hero Image with exact Team component styling */}
-        <div className="relative w-full h-full min-h-[400px] lg:min-h-[500px] max-w-md mx-auto lg:max-w-none px-4 lg:px-0">
-          {/* Green backdrop */}
-          <div className="absolute inset-0 bg-greenBg rounded-[32px] -rotate-3 scale-[0.98] shadow-lg"></div>
+        {/* Right Column: Hero Image */}
+        <div className="relative w-full flex-1 min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] max-w-md mx-auto lg:max-w-none px-2 sm:px-4 lg:px-0">
+          <div className="absolute inset-0 bg-greenBg rounded-[24px] sm:rounded-[32px] -rotate-3 scale-[0.98] shadow-lg"></div>
           
-          {/* Actual image wrapper */}
-          <div className="absolute inset-0 rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/10">
+          <div className="absolute inset-0 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/10">
             <Image 
               src="/education-page/hero-image.jpg" 
               fill 

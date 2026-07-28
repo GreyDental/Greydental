@@ -8,27 +8,27 @@ const MotionArrowRight = motion(ArrowRight);
 
 export default function Featured() {
   return (
-    <section className="w-full bg-white py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="w-full bg-white py-16 sm:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header Area */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-          <div>
-            <h2 className="text-4xl lg:text-[44px] font-semi_bold_24pt text-darkBlueText mb-2 tracking-tight">Featured</h2>
-            <p className="text-gray-500 text-[16px] font-regular_18pt">Accredited education from world-class instructors.</p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-12 gap-5 sm:gap-6">
+          <div className="flex flex-col">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semi_bold_24pt text-darkBlueText mb-2 tracking-tight">Featured</h2>
+            <p className="text-gray-500 text-[15px] sm:text-[16px] font-regular_18pt">Accredited education from world-class instructors.</p>
           </div>
-          <motion.div whileHover="hover" className="inline-block">
-            <button className="bg-greenBg text-blueBg px-6 py-2.5 rounded-[4px] font-inter-medium_18pt text-[15px] hover:bg-[#5cd496] transition-colors inline-flex items-center gap-2">
+          <motion.div whileHover="hover" className="inline-block w-full sm:w-auto">
+            <a href="/courses" className="bg-greenBg text-blueBg px-6 py-2.5 rounded-[4px] font-inter-medium_18pt text-[15px] hover:bg-[#5cd496] transition-colors inline-flex items-center justify-center gap-2 w-full sm:w-auto">
               View all courses
               <MotionArrowRight className="w-4 h-4" variants={{ hover: { x: 5 } }} transition={{ duration: 0.2 }} />
-            </button>
+            </a>
           </motion.div>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Cards Area — flex for phone stacking */}
+        <div className="flex flex-col md:flex-row md:flex-wrap gap-8">
           {/* Card 1 */}
-          <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-            <div className="relative h-64 w-full">
+          <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]">
+            <div className="relative h-56 sm:h-64 w-full">
               <Image 
                 src="/main-page-featured/feature-1.jpg" 
                 alt="Remote Learning" 
@@ -36,8 +36,8 @@ export default function Featured() {
                 className="object-cover" 
               />
             </div>
-            <div className="p-8 flex flex-col flex-grow">
-              <h3 className="text-[22px] font-semi_bold_24pt text-darkBlueText mb-3 leading-snug">
+            <div className="p-6 sm:p-8 flex flex-col flex-grow">
+              <h3 className="text-[20px] sm:text-[22px] font-semi_bold_24pt text-darkBlueText mb-3 leading-snug">
                 Foundations of Endodontics - Remote Learning
               </h3>
               <p className="text-[15px] text-gray-500 font-regular_18pt mb-6 flex-grow">
@@ -50,18 +50,15 @@ export default function Featured() {
                 <span className="px-3 py-1 border border-gray-200 rounded text-xs font-inter-medium_18pt text-darkBlueText">Paid</span>
               </div>
               
-              <button className="w-full bg-blueBg hover:bg-blueBtnBg group inline-flex items-start justify-center h-[50px] rounded-[6px] text-[15px] font-inter-medium_18pt overflow-hidden transition-colors duration-200">
-                <span className="flex flex-col transition-transform duration-300 group-hover:-translate-y-1/2">
-                  <span className="h-[50px] flex items-center text-white">View Course</span>
-                  <span className="h-[50px] flex items-center text-white">View Course</span>
-                </span>
+              <button className="w-full bg-blueBg hover:bg-blueBtnBg inline-flex items-center justify-center h-[50px] rounded-[6px] text-[15px] font-inter-medium_18pt transition-colors duration-200 text-white">
+                View Course
               </button>
             </div>
           </div>
           
           {/* Card 2 */}
-          <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-            <div className="relative h-64 w-full">
+          <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]">
+            <div className="relative h-56 sm:h-64 w-full">
               <Image 
                 src="/main-page-featured/feature-2.jpg" 
                 alt="Immersive Residency" 
@@ -69,8 +66,8 @@ export default function Featured() {
                 className="object-cover" 
               />
             </div>
-            <div className="p-8 flex flex-col flex-grow">
-              <h3 className="text-[22px] font-semi_bold_24pt text-darkBlueText mb-3 leading-snug">
+            <div className="p-6 sm:p-8 flex flex-col flex-grow">
+              <h3 className="text-[20px] sm:text-[22px] font-semi_bold_24pt text-darkBlueText mb-3 leading-snug">
                 Foundations of Endodontics - Immersive Residency
               </h3>
               <p className="text-[15px] text-gray-500 font-regular_18pt mb-6 flex-grow">
@@ -82,18 +79,15 @@ export default function Featured() {
                 <span className="px-3 py-1 border border-gray-200 rounded text-xs font-inter-medium_18pt text-darkBlueText">Skills Exam</span>
               </div>
               
-              <button className="w-full bg-blueBg hover:bg-blueBtnBg group inline-flex items-start justify-center h-[50px] rounded-[6px] text-[15px] font-inter-medium_18pt overflow-hidden transition-colors duration-200">
-                <span className="flex flex-col transition-transform duration-300 group-hover:-translate-y-1/2">
-                  <span className="h-[50px] flex items-center text-white">View Course</span>
-                  <span className="h-[50px] flex items-center text-white">View Course</span>
-                </span>
+              <button className="w-full bg-blueBg hover:bg-blueBtnBg inline-flex items-center justify-center h-[50px] rounded-[6px] text-[15px] font-inter-medium_18pt transition-colors duration-200 text-white">
+                View Course
               </button>
             </div>
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow">
-            <div className="relative h-64 w-full">
+          <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden flex flex-col hover:shadow-lg transition-shadow w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]">
+            <div className="relative h-56 sm:h-64 w-full">
               <Image 
                 src="/main-page-featured/feature-3.jpg" 
                 alt="Dental Implants Bootcamp" 
@@ -101,8 +95,8 @@ export default function Featured() {
                 className="object-cover" 
               />
             </div>
-            <div className="p-8 flex flex-col flex-grow">
-              <h3 className="text-[22px] font-semi_bold_24pt text-darkBlueText mb-3 leading-snug">
+            <div className="p-6 sm:p-8 flex flex-col flex-grow">
+              <h3 className="text-[20px] sm:text-[22px] font-semi_bold_24pt text-darkBlueText mb-3 leading-snug">
                 Dental Implants Bootcamp for General Practitioner
               </h3>
               <p className="text-[15px] text-gray-500 font-regular_18pt mb-6 flex-grow">
@@ -114,11 +108,8 @@ export default function Featured() {
                 <span className="px-3 py-1 border border-gray-200 rounded text-xs font-inter-medium_18pt text-darkBlueText">Live</span>
               </div>
               
-              <button className="w-full bg-blueBg hover:bg-blueBtnBg group inline-flex items-start justify-center h-[50px] rounded-[6px] text-[15px] font-inter-medium_18pt overflow-hidden transition-colors duration-200">
-                <span className="flex flex-col transition-transform duration-300 group-hover:-translate-y-1/2">
-                  <span className="h-[50px] flex items-center text-white">View Workshop</span>
-                  <span className="h-[50px] flex items-center text-white">View Workshop</span>
-                </span>
+              <button className="w-full bg-blueBg hover:bg-blueBtnBg inline-flex items-center justify-center h-[50px] rounded-[6px] text-[15px] font-inter-medium_18pt transition-colors duration-200 text-white">
+                View Workshop
               </button>
             </div>
           </div>

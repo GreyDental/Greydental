@@ -19,7 +19,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">
         <Navbar />
-        <main className="max-w-7xl mx-auto w-full flex-grow">
+        <main className="max-w-7xl mx-auto w-full flex-grow flex flex-col">
           {children}
         </main>
         <Footer />

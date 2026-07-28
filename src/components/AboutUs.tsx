@@ -31,10 +31,10 @@ export default function AboutUs() {
         {/* Divider */}
         <div className="w-full h-px bg-gray-200 mb-20"></div>
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        {/* Features — flex for phone */}
+        <div className="flex flex-col md:flex-row md:flex-wrap gap-10 md:gap-8">
           {/* Feature 1 */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center w-full md:w-[calc(33.333%-1.34rem)]">
             <div className="w-16 h-16 bg-[#F8FAFC] rounded-2xl border border-gray-100 flex items-center justify-center mb-6">
               <Image src="/home-page-about-us/clinical.svg" alt="Clinical rigor" width={32} height={32} />
             </div>
@@ -45,7 +45,7 @@ export default function AboutUs() {
           </div>
 
           {/* Feature 2 */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center w-full md:w-[calc(33.333%-1.34rem)]">
             <div className="w-16 h-16 bg-[#F8FAFC] rounded-2xl border border-gray-100 flex items-center justify-center mb-6">
               <Image src="/home-page-about-us/accessibility.svg" alt="Accessibility" width={32} height={32} />
             </div>
@@ -56,7 +56,7 @@ export default function AboutUs() {
           </div>
 
           {/* Feature 3 */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center w-full md:w-[calc(33.333%-1.34rem)]">
             <div className="w-16 h-16 bg-[#F8FAFC] rounded-2xl border border-gray-100 flex items-center justify-center mb-6">
               <Image src="/home-page-about-us/community.svg" alt="Community" width={32} height={32} />
             </div>
