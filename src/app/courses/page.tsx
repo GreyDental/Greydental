@@ -1,6 +1,5 @@
 import CoursesHero from "@/components/CoursesHero";
 import CoursesListing from "@/components/CoursesListing";
-import WorkshopsSection from "@/components/WorkshopsSection";
 import Newsletter from "@/components/Newsletter";
 
 export const metadata = {
@@ -15,16 +14,11 @@ export default function CoursesPage() {
       {/* Hero — first section after header */}
       <CoursesHero />
 
-      {/* Courses listing */}
+      {/* Tabs + Courses / Workshops / Webinars */}
       <CoursesListing />
-
-      {/* Workshops */}
-      <WorkshopsSection />
 
       {/* Newsletter */}
       <Newsletter />
     </main>
   );
 }
-
-
