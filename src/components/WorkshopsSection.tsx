@@ -8,7 +8,7 @@ const workshops = [
     description:
       "Hands-on session covering digital scanning, design software, and milling workflow for restorations.",
     duration: "2 hrs session",
-    href: "/enroll",
+    href: "/workshops",
   },
   {
     tag: "CASE DOCUMENTATION",
@@ -16,7 +16,7 @@ const workshops = [
     description:
       "Learn structured recording, submission formatting, and presentation of clinical case records.",
     duration: "4 hrs session",
-    href: "/enroll",
+    href: "/workshops",
   },
 ];
 
