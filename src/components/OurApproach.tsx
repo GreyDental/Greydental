@@ -45,15 +45,14 @@ export default function OurApproach() {
           Our flexible learning model combines engaging digital education with practical clinical insights to help learners succeed at every stage of their dental journey.
         </p>
 
-        {/* Grid Layout: Left Cards (2x2) & Right Image */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          
+        {/* Flex Layout: Left Cards (2x2) & Right Image */}
+        <div className="w-full min-w-0 flex flex-col lg:flex-row lg:items-stretch gap-8 lg:gap-10">
           {/* Left Side: 2x2 Cards with bg-greyBg */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="w-full lg:w-[58%] lg:flex-shrink-0 min-w-0 flex flex-col sm:flex-row sm:flex-wrap gap-6">
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="bg-greyBg rounded-[24px] p-8 border border-gray-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col justify-start"
+                className="bg-greyBg rounded-[24px] p-8 border border-gray-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] flex flex-col justify-start min-w-0 w-full sm:w-[calc(50%-0.75rem)]"
               >
                 {/* Icon */}
                 <div className="mb-6">
@@ -80,7 +79,7 @@ export default function OurApproach() {
           </div>
 
           {/* Right Side: Image Container */}
-          <div className="lg:col-span-5 relative w-full min-h-[360px] lg:min-h-[460px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg border border-gray-100 bg-gray-50">
+          <div className="relative w-full lg:flex-1 min-w-0 min-h-[360px] lg:min-h-[460px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg border border-gray-100 bg-gray-50">
             <Image
               src="/about-us/our-approach-icons/our-approach-image.jpg"
               alt="Practical Learning Designed for Real-World Success"
@@ -89,7 +88,6 @@ export default function OurApproach() {
               className="object-cover"
             />
           </div>
-
         </div>
 
       </div>

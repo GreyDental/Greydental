@@ -163,9 +163,9 @@ export default function CourseDetailLanding() {
               ))}
             </ul>
 
-            <button
-              type="button"
-              className="inline-flex items-center justify-center gap-2 w-full bg-[#79F0B5] text-[#00173C] px-5 py-3.5 rounded-[10px] font-inter-medium_18pt text-[15px] mb-5"
+            <Link
+              href="/courses"
+              className="inline-flex items-center justify-center gap-2 w-full bg-[#79F0B5] hover:bg-[#41F39B] text-[#00173C] px-5 py-3.5 rounded-[10px] font-inter-medium_18pt text-[15px] mb-5 transition-colors"
             >
               <Image
                 src="/Specific_Course_Page/buy-icon.svg"
@@ -175,7 +175,7 @@ export default function CourseDetailLanding() {
                 className="w-5 h-5"
               />
               <span>Buy Course</span>
-            </button>
+            </Link>
 
             <div className="flex flex-col items-center gap-3 pt-1">
               <p className="text-white/55 font-regular_18pt text-[10px] sm:text-[11px] tracking-[0.06em] uppercase text-center leading-relaxed">

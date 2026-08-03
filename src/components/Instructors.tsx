@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Instructors() {
   const instructors = [
@@ -36,7 +37,11 @@ export default function Instructors() {
         {/* Instructors — flex for phone */}
         <div className="w-full flex flex-col md:flex-row md:flex-wrap gap-8">
           {instructors.map((instructor, idx) => (
-            <div key={idx} className="flex flex-col items-start w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]">
+            <Link
+              key={idx}
+              href="/instructors"
+              className="flex flex-col items-start min-w-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] group"
+            >
               
               {/* Image Container with Mint Green Top Accent Bar */}
               <div className="relative w-full rounded-[24px] overflow-hidden mb-6 border-t-4 border-greenBg bg-gray-100 shadow-sm">
@@ -52,14 +57,14 @@ export default function Instructors() {
               </div>
 
               {/* Text Info */}
-              <h3 className="text-xl md:text-[22px] font-semi_bold_24pt text-darkBlueText mb-1">
+              <h3 className="text-xl md:text-[22px] font-semi_bold_24pt text-darkBlueText mb-1 group-hover:text-blueText transition-colors">
                 {instructor.name}
               </h3>
               <p className="text-gray-500 font-regular_18pt text-sm">
                 {instructor.role}
               </p>
 
-            </div>
+            </Link>
           ))}
         </div>
 

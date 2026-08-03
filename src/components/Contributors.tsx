@@ -39,27 +39,29 @@ export default function Contributors() {
           </span>
         </div>
 
-        {/* Header Grid: Left Title, Right Description */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end mb-14">
-          <div>
+        {/* Header: Left Title, Right Description */}
+        <div className="flex flex-col lg:flex-row lg:items-end gap-8 mb-14 w-full min-w-0">
+          <div className="flex-1 min-w-0">
             <h2 className="text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-darkBlueText leading-[1.15] tracking-tight">
               Experts who enrich every learning experience
             </h2>
           </div>
-          <div className="lg:pl-8">
+          <div className="flex-1 min-w-0 lg:pl-8">
             <p className="text-gray-500 font-regular_18pt text-base md:text-[17px] leading-relaxed max-w-md">
               We believe every learner deserves personalized guidance and timely support throughout their educational journey.
             </p>
           </div>
         </div>
 
-        {/* 4 Contributors Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* 4 Contributors — flex wrap */}
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-6 lg:gap-8 w-full min-w-0">
           {contributors.map((c, idx) => (
-            <div key={idx} className="flex flex-col items-start">
-              
+            <div
+              key={idx}
+              className="flex flex-col items-start min-w-0 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.5rem)]"
+            >
               {/* Green Card Image Container */}
-              <div className="relative w-full aspect-[1/1.05] rounded-[10px] overflow-hidden mb-5 bg-green flex items-end justify-center shadow-sm ">
+              <div className="relative w-full aspect-[1/1.05] rounded-[10px] overflow-hidden mb-5 bg-green flex items-end justify-center shadow-sm">
                 <Image
                   src={c.image}
                   alt={c.name}
@@ -81,7 +83,6 @@ export default function Contributors() {
               <p className="text-gray-500 font-regular_18pt text-[13px]">
                 {c.description}
               </p>
-
             </div>
           ))}
         </div>

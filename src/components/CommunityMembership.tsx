@@ -20,7 +20,7 @@ const plans: Plan[] = [
       "Monthly webinar access",
     ],
     cta: "Register as Student",
-    href: "/enroll",
+    href: "/community#join",
   },
   {
     name: "Contributor",
@@ -33,7 +33,7 @@ const plans: Plan[] = [
       "Resource library (Level 1)",
     ],
     cta: "Join Monthly",
-    href: "/enroll",
+    href: "/community#join",
   },
   {
     name: "Grey Dental Alumni",
@@ -45,7 +45,7 @@ const plans: Plan[] = [
       "Advanced Circle Priority",
     ],
     cta: "Verify Graduation",
-    href: "/enroll",
+    href: "/community#join",
   },
   {
     name: "Mastermind",
@@ -58,7 +58,7 @@ const plans: Plan[] = [
       "Private Mastermind portal",
     ],
     cta: "Request Application",
-    href: "/enroll",
+    href: "/community#join",
   },
 ];
 

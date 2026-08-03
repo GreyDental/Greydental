@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const MotionArrowRight = motion(ArrowRight);
@@ -22,10 +23,13 @@ export default function AboutUs() {
 
         {/* Button */}
         <motion.div whileHover="hover" className="inline-block mb-20">
-          <button className="bg-greenBg text-blueBg px-8 py-3 rounded-full font-semi_bold_24pt text-[15px] hover:bg-[#5cd496] transition-colors inline-flex items-center gap-2">
+          <Link
+            href="/about"
+            className="bg-greenBg text-blueBg px-8 py-3 rounded-full font-semi_bold_24pt text-[15px] hover:bg-[#5cd496] transition-colors inline-flex items-center gap-2"
+          >
             ABOUT US
             <MotionArrowRight className="w-4 h-4" variants={{ hover: { x: 5 } }} transition={{ duration: 0.2 }} />
-          </button>
+          </Link>
         </motion.div>
 
         {/* Divider */}
@@ -34,7 +38,7 @@ export default function AboutUs() {
         {/* Features — flex for phone */}
         <div className="flex flex-col md:flex-row md:flex-wrap gap-10 md:gap-8">
           {/* Feature 1 */}
-          <div className="flex flex-col items-center w-full md:w-[calc(33.333%-1.34rem)]">
+          <div className="flex flex-col items-center min-w-0 w-full md:w-[calc(33.333%-1.34rem)]">
             <div className="w-16 h-16 bg-[#F8FAFC] rounded-2xl border border-gray-100 flex items-center justify-center mb-6">
               <Image src="/home-page-about-us/clinical.svg" alt="Clinical rigor" width={32} height={32} />
             </div>
@@ -45,7 +49,7 @@ export default function AboutUs() {
           </div>
 
           {/* Feature 2 */}
-          <div className="flex flex-col items-center w-full md:w-[calc(33.333%-1.34rem)]">
+          <div className="flex flex-col items-center min-w-0 w-full md:w-[calc(33.333%-1.34rem)]">
             <div className="w-16 h-16 bg-[#F8FAFC] rounded-2xl border border-gray-100 flex items-center justify-center mb-6">
               <Image src="/home-page-about-us/accessibility.svg" alt="Accessibility" width={32} height={32} />
             </div>
@@ -56,7 +60,7 @@ export default function AboutUs() {
           </div>
 
           {/* Feature 3 */}
-          <div className="flex flex-col items-center w-full md:w-[calc(33.333%-1.34rem)]">
+          <div className="flex flex-col items-center min-w-0 w-full md:w-[calc(33.333%-1.34rem)]">
             <div className="w-16 h-16 bg-[#F8FAFC] rounded-2xl border border-gray-100 flex items-center justify-center mb-6">
               <Image src="/home-page-about-us/community.svg" alt="Community" width={32} height={32} />
             </div>

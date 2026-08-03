@@ -27,13 +27,13 @@ export default function PartnersCta() {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto min-w-0">
               <Link
-                href="/enroll"
+                href="/about"
                 className="inline-flex items-center justify-center w-full sm:w-auto bg-[#41F39B] hover:bg-[#79F0B5] text-[#00173C] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 Become a Partner
               </Link>
               <Link
-                href="/contact"
+                href="/community"
                 className="inline-flex items-center justify-center w-full sm:w-auto bg-transparent border border-white text-white hover:bg-white hover:text-[#00173C] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 Contact Us

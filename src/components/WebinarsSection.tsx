@@ -17,10 +17,10 @@ export default function WebinarsSection({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-6 sm:gap-8 md:gap-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 sm:gap-4 md:gap-10 w-full">
-          <h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight flex-shrink-0">
+          <h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight flex-shrink-0 min-w-0">
             Online Webinars
           </h2>
-          <p className="text-[#6B7585] font-regular_18pt text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed max-w-md md:text-right">
+          <p className="text-[#6B7585] font-regular_18pt text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed max-w-md md:text-right min-w-0">
             Free, live sessions covering emerging techniques and clinical
             Q&amp;A.
           </p>

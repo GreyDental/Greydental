@@ -48,7 +48,7 @@ export default function Navbar() {
           <div className="flex items-center gap-6 font-inter-medium_18pt text-[15px]">
             <motion.div whileHover="hover" className="inline-block">
               <Link
-                href="/enroll"
+                href="/courses"
                 className="bg-greenBg text-blueBg px-5 py-2.5 rounded font-medium flex items-center gap-2 hover:bg-[#6be4ab] transition-colors"
               >
                 <span>Enroll now</span>
@@ -70,12 +70,6 @@ export default function Navbar() {
                 </motion.svg>
               </Link>
             </motion.div>
-            <Link
-              href="/login"
-              className="text-blueText hover:text-black transition-colors"
-            >
-              Login
-            </Link>
           </div>
         </div>
 
@@ -115,18 +109,11 @@ export default function Navbar() {
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-4 pb-2">
                 <Link
-                  href="/enroll"
+                  href="/courses"
                   className="bg-greenBg text-blueBg px-5 py-3 rounded font-medium inline-flex items-center justify-center gap-2"
                   onClick={() => setOpen(false)}
                 >
                   Enroll now
-                </Link>
-                <Link
-                  href="/login"
-                  className="text-blueText text-center py-2 hover:text-black transition-colors"
-                  onClick={() => setOpen(false)}
-                >
-                  Login
                 </Link>
               </div>
             </div>

@@ -24,11 +24,11 @@ export default function OurValues() {
           Guided by Excellence, Integrity, and Lifelong Learning
         </h2>
 
-        {/* Card Grid Container */}
-        <div className="w-full bg-white rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.05)] border border-gray-100 grid grid-cols-1 lg:grid-cols-2 items-stretch">
+        {/* Card flex container */}
+        <div className="w-full min-w-0 bg-white rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col lg:flex-row lg:items-stretch">
           
           {/* Left Column: Image */}
-          <div className="relative min-h-[340px] lg:min-h-[480px] w-full">
+          <div className="relative min-h-[340px] lg:min-h-[480px] w-full lg:w-1/2 lg:flex-shrink-0 min-w-0">
             <Image
               src="/about-us/our-values.jpg"
               alt="The Foundation of Our Academy"
@@ -39,7 +39,7 @@ export default function OurValues() {
           </div>
 
           {/* Right Column: White Background Content */}
-          <div className="bg-white p-8 md:p-12 lg:p-14 flex flex-col justify-center">
+          <div className="bg-white p-8 md:p-12 lg:p-14 flex flex-col justify-center flex-1 min-w-0">
             <h3 className="text-2xl lg:text-[28px] font-semi_bold_24pt text-darkBlueText mb-4 tracking-tight">
               The Foundation of Our Academy
             </h3>

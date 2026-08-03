@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Mission() {
   return (
-    <section className="w-full bg-white py-20 md:py-28">
+    <section id="mission" className="w-full bg-white py-20 md:py-28">
       <div className="max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
         {/* Quote Icon */}
         <div className="mb-8">

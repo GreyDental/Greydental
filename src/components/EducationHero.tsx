@@ -16,7 +16,7 @@ export default function EducationHero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-16 items-center">
         
         {/* Left Column: Text & CTA Content */}
-        <div className="flex flex-col items-start max-w-xl w-full flex-1">
+        <div className="flex flex-col items-start max-w-xl w-full flex-1 min-w-0">
           
           {/* Pill Badge */}
           <div className="bg-white border border-gray-200/80 px-4 sm:px-5 py-2 rounded-full mb-6 sm:mb-8 shadow-sm">
@@ -87,7 +87,7 @@ export default function EducationHero() {
         </div>
 
         {/* Right Column: Hero Image */}
-        <div className="relative w-full flex-1 min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] max-w-md mx-auto lg:max-w-none px-2 sm:px-4 lg:px-0">
+        <div className="relative w-full flex-1 min-w-0 min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] max-w-md mx-auto lg:max-w-none px-2 sm:px-4 lg:px-0">
           <div className="absolute inset-0 bg-greenBg rounded-[24px] sm:rounded-[32px] -rotate-3 scale-[0.98] shadow-lg"></div>
           
           <div className="absolute inset-0 rounded-[24px] sm:rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/10">

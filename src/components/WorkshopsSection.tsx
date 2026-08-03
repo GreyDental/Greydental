@@ -68,7 +68,7 @@ export default function WorkshopsSection({
             {workshops.map((workshop) => (
               <article
                 key={workshop.title}
-                className="flex flex-col flex-1 bg-white border border-[#E5E7EB] rounded-[16px] sm:rounded-[20px] p-5 sm:p-6 md:p-7 shadow-[0_8px_24px_rgba(0,23,60,0.08)]"
+                className="flex flex-col flex-1 min-w-0 bg-white border border-[#E5E7EB] rounded-[16px] sm:rounded-[20px] p-5 sm:p-6 md:p-7 shadow-[0_8px_24px_rgba(0,23,60,0.08)]"
               >
                 <span className="inline-flex self-start bg-[#41F39BCC] text-[#00173C] text-[10px] sm:text-[11px] font-semi_bold_24pt tracking-[0.08em] uppercase px-3 py-1 rounded-full mb-3 sm:mb-4">
                   {workshop.tag}

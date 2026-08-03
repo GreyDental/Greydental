@@ -69,7 +69,7 @@ export default function CoreClinicalPublications() {
                 </p>
 
                 <Link
-                  href="/enroll"
+                  href="/courses"
                   className="inline-flex items-center justify-center w-full bg-[#08386D] hover:bg-[#051937] text-white px-5 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
                 >
                   Buy Now

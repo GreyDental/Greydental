@@ -71,7 +71,7 @@ export default function StudentSupport() {
               </div>
 
               <Link
-                href="/contact"
+                href="/about"
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#41F39B] text-[#011A43] px-5 py-3 rounded-[8px] font-inter-medium_18pt text-[15px] flex-shrink-0 md:mb-1"
               >
                 <span>Contact Support</span>
@@ -100,7 +100,7 @@ export default function StudentSupport() {
               {cards.map((card) => (
                 <div
                   key={card.title}
-                  className="flex flex-col w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.875rem)] min-h-[180px] sm:min-h-[200px] bg-[#FFFFFF] border border-[#E5E7EB] rounded-[14px] md:rounded-[16px] p-5 sm:p-6 md:p-7 shadow-[0_8px_30px_rgba(0,23,60,0.06)]"
+                  className="flex flex-col min-w-0 w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.875rem)] min-h-[180px] sm:min-h-[200px] bg-[#FFFFFF] border border-[#E5E7EB] rounded-[14px] md:rounded-[16px] p-5 sm:p-6 md:p-7 shadow-[0_8px_30px_rgba(0,23,60,0.06)]"
                 >
                   <div className="mb-4 sm:mb-5 flex-shrink-0">
                     <Image

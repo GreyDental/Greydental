@@ -22,7 +22,7 @@ export default function CommunityJoinCta() {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <Link
-                href="/enroll"
+                href="/community#membership"
                 className="inline-flex items-center justify-center bg-[#00173C] hover:bg-[#08386D] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 Join Community Now

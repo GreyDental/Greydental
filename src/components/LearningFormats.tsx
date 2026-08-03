@@ -25,7 +25,7 @@ export default function LearningFormats() {
         "Self-paced modules including 4K video lectures, interactive PDFs, knowledge MCQs, and a remote completion certificate.",
       features: ["24/7 Global Access", "Digital Study Materials"],
       cta: "Explore Online",
-      href: "/education",
+      href: "/courses",
       buttonVariant: "outline",
       gradient: true,
     },
@@ -38,7 +38,7 @@ export default function LearningFormats() {
         "Combine online theory with live demonstrations and an in-person clinical assessment for a rounded expertise.",
       features: ["Live Q&A Sessions", "Virtual Faculty Interaction"],
       cta: "Explore Hybrid",
-      href: "/education",
+      href: "/courses",
       buttonVariant: "green",
       gradient: false,
     },
@@ -51,7 +51,7 @@ export default function LearningFormats() {
         "Intensive, focused in-person sessions at our training facilities for specific advanced surgical topics.",
       features: ["Clinical Supervision", "Patient Demonstrations"],
       cta: "Explore Workshops",
-      href: "/education",
+      href: "/workshops",
       buttonVariant: "outline",
       gradient: true,
     },
@@ -91,7 +91,7 @@ export default function LearningFormats() {
           {formats.map((format) => (
             <div
               key={format.title}
-              className="flex flex-col w-full lg:flex-1 min-h-0 rounded-[20px] md:rounded-[24px] border border-[#E5E7EB] p-6 sm:p-7 md:p-8 shadow-[0_8px_24px_rgba(0,23,60,0.06)]"
+              className="flex flex-col w-full lg:flex-1 min-h-0 min-w-0 rounded-[20px] md:rounded-[24px] border border-[#E5E7EB] p-6 sm:p-7 md:p-8 shadow-[0_8px_24px_rgba(0,23,60,0.06)]"
               style={
                 format.gradient
                   ? {

@@ -78,7 +78,7 @@ export default function ResourcesWebinarFaq() {
 
             <div className="mt-auto flex flex-col sm:flex-row gap-3 w-full min-w-0">
               <Link
-                href="/enroll"
+                href="/courses"
                 className="inline-flex items-center justify-center flex-1 bg-[#08386D] hover:bg-[#00173C] text-white px-5 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 Register for Event

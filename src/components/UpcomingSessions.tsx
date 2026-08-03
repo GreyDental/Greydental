@@ -121,7 +121,7 @@ export default function UpcomingSessions() {
                 </div>
 
                 <Link
-                  href="/enroll"
+                  href="/workshops#upcoming"
                   className="mt-auto inline-flex items-center justify-center w-full bg-white border border-[#00173C] text-[#00173C] hover:bg-[#41F39B] hover:border-[#41F39B] px-5 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
                 >
                   {session.cta}

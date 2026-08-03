@@ -5,7 +5,7 @@ export default function Team() {
     <section className="w-[100vw] relative left-1/2 -translate-x-1/2 bg-blueBg py-14 sm:py-20 md:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col lg:flex-row gap-10 sm:gap-12 lg:gap-8 items-stretch">
         {/* Left Column: Text Card */}
-        <div className="w-full lg:flex-[3] bg-white rounded-[24px] sm:rounded-[32px] p-7 sm:p-10 lg:p-14 relative overflow-hidden shadow-2xl flex flex-col justify-center">
+        <div className="w-full min-w-0 lg:flex-[3] bg-white rounded-[24px] sm:rounded-[32px] p-7 sm:p-10 lg:p-14 relative overflow-hidden shadow-2xl flex flex-col justify-center">
           
 
           <div className="relative z-10 flex flex-col">
@@ -28,7 +28,7 @@ export default function Team() {
         </div>
 
         {/* Right Column: Image */}
-        <div className="w-full lg:flex-[2] relative min-h-[320px] sm:min-h-[400px] lg:min-h-[500px] max-w-md mx-auto lg:max-w-none px-2 sm:px-4 lg:px-0">
+        <div className="w-full min-w-0 lg:flex-[2] relative min-h-[320px] sm:min-h-[400px] lg:min-h-[500px] max-w-md mx-auto lg:max-w-none px-2 sm:px-4 lg:px-0">
           {/* Green backdrop */}
           <div className="absolute inset-0 bg-greenBg rounded-[24px] sm:rounded-[32px] -rotate-3 scale-[0.98] shadow-lg"></div>
           

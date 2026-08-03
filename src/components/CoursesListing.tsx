@@ -176,7 +176,7 @@ export default function CoursesListing() {
                 {filtered.map((course) => (
                   <article
                     key={course.id}
-                    className="flex flex-col w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] bg-white border border-[#E5E7EB] rounded-[16px] overflow-hidden shadow-[0_4px_20px_rgba(0,23,60,0.04)]"
+                    className="flex flex-col min-w-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] bg-white border border-[#E5E7EB] rounded-[16px] overflow-hidden shadow-[0_4px_20px_rgba(0,23,60,0.04)]"
                   >
                     <div className="relative w-full aspect-[16/10]">
                       <Image

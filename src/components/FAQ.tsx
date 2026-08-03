@@ -19,7 +19,7 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
         onClick={onClick}
         className="w-full flex items-center justify-between text-left focus:outline-none group"
       >
-        <span className="font-inter-medium_18pt text-[15px] text-darkBlueText group-hover:text-blueText transition-colors">
+        <span className="font-inter-medium_18pt text-[15px] text-darkBlueText group-hover:text-blueText transition-colors min-w-0 flex-1 pr-2">
           {question}
         </span>
         <motion.div

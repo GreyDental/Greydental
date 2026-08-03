@@ -29,12 +29,12 @@ export default function EducationCategories() {
         
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-16 gap-5 sm:gap-8">
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-darkBlueText leading-[1.15] tracking-tight">
               Explore Course Categories
             </h2>
           </div>
-          <div className="flex-1 lg:max-w-md">
+          <div className="flex-1 min-w-0 lg:max-w-md">
             <p className="text-gray-500 font-regular_18pt text-[15px] sm:text-base md:text-[17px] leading-relaxed">
               Every track is taught by a practicing specialist and built around real clinical cases.
             </p>
@@ -46,7 +46,7 @@ export default function EducationCategories() {
           {categories.map((cat, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col h-full hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-shadow duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
+              className="bg-white rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col h-full hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-shadow duration-300 min-w-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]"
             >
               {/* Card Image */}
               <div className="relative w-full aspect-[4/3] overflow-hidden bg-gray-100">
