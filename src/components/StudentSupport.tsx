@@ -49,7 +49,7 @@ export default function StudentSupport() {
           <div
             className="flex flex-col rounded-[20px] md:rounded-[28px] border border-[#E4E4E4] px-5 sm:px-8 md:px-10 pt-8 sm:pt-10 md:pt-12 pb-40 sm:pb-44 md:pb-48"
             style={{
-              background: "linear-gradient(180deg, #00173C 0%, #011C47 100%)",
+              background: "linear-gradient(180deg, #3A738D 0%, #2F5F75 100%)",
             }}
           >
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-10">
@@ -71,8 +71,8 @@ export default function StudentSupport() {
               </div>
 
               <Link
-                href="/about"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#41F39B] text-[#011A43] px-5 py-3 rounded-[8px] font-inter-medium_18pt text-[15px] flex-shrink-0 md:mb-1"
+                href="/contact"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#5ECAA0] text-black px-5 py-3 rounded-[8px] font-inter-medium_18pt text-[15px] flex-shrink-0 md:mb-1"
               >
                 <span>Contact Support</span>
                 <svg
@@ -100,7 +100,7 @@ export default function StudentSupport() {
               {cards.map((card) => (
                 <div
                   key={card.title}
-                  className="flex flex-col min-w-0 w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.875rem)] min-h-[180px] sm:min-h-[200px] bg-[#FFFFFF] border border-[#E5E7EB] rounded-[14px] md:rounded-[16px] p-5 sm:p-6 md:p-7 shadow-[0_8px_30px_rgba(0,23,60,0.06)]"
+                  className="flex flex-col min-w-0 w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.875rem)] min-h-[180px] sm:min-h-[200px] bg-[#FFFFFF] border border-[#E5E7EB] rounded-[14px] md:rounded-[16px] p-5 sm:p-6 md:p-7 shadow-[0_8px_30px_rgba(58,115,141,0.06)]"
                 >
                   <div className="mb-4 sm:mb-5 flex-shrink-0">
                     <Image
@@ -112,11 +112,11 @@ export default function StudentSupport() {
                     />
                   </div>
 
-                  <h3 className="text-[17px] sm:text-[18px] md:text-[20px] font-semi_bold_24pt text-[#00173C] mb-2 tracking-tight">
+                  <h3 className="text-[17px] sm:text-[18px] md:text-[20px] font-semi_bold_24pt text-[#3A738D] mb-2 tracking-tight">
                     {card.title}
                   </h3>
 
-                  <p className="text-[#6B7585] font-regular_18pt text-[14px] md:text-[15px] leading-relaxed">
+                  <p className="text-[#777779] font-regular_18pt text-[14px] md:text-[15px] leading-relaxed">
                     {card.description}
                   </p>
                 </div>
