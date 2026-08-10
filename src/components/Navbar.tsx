@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 const navLinks = [
   { href: "/about", label: "About us" },
@@ -12,6 +13,7 @@ const navLinks = [
   { href: "/resources", label: "Resources" },
   { href: "/instructors", label: "Instructors" },
   { href: "/partners", label: "Partners" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -19,19 +21,11 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-whiteBg border-b border-border relative z-50">
-      <div className="max-w-7xl mx-auto w-full flex items-center justify-between gap-4 px-4 sm:px-6 py-4">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="font-semi_bold_24pt text-xl sm:text-2xl tracking-tight flex items-center flex-shrink-0"
-          onClick={() => setOpen(false)}
-        >
-          <span className="bg-gradient-to-r from-blueGradient1 via-blueGradient2 to-greenGradient1 to-[80%] bg-clip-text text-transparent">
-            Grey Dental
-          </span>
-        </Link>
+      <div className="max-w-7xl mx-auto w-full flex items-center justify-between gap-4 px-4 sm:px-6 py-3 sm:py-4">
+        <div onClick={() => setOpen(false)}>
+          <BrandLogo height={44} priority />
+        </div>
 
-        {/* Desktop links + actions */}
         <div className="hidden lg:flex items-center gap-8">
           <div className="flex items-center gap-6 font-inter-medium_18pt text-blueText text-[15px]">
             {navLinks.map((link) => (
@@ -49,7 +43,7 @@ export default function Navbar() {
             <motion.div whileHover="hover" className="inline-block">
               <Link
                 href="/courses"
-                className="bg-greenBg text-blueBg px-5 py-2.5 rounded font-medium flex items-center gap-2 hover:bg-[#6be4ab] transition-colors"
+                className="bg-greenBg text-black px-5 py-2.5 rounded font-medium flex items-center gap-2 hover:bg-[#7ED9B5] transition-colors"
               >
                 <span>Enroll now</span>
                 <motion.svg
@@ -73,7 +67,6 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu button */}
         <button
           type="button"
           className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-blueText border border-border"
@@ -85,7 +78,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile drawer */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -110,7 +102,7 @@ export default function Navbar() {
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 pt-4 pb-2">
                 <Link
                   href="/courses"
-                  className="bg-greenBg text-blueBg px-5 py-3 rounded font-medium inline-flex items-center justify-center gap-2"
+                  className="bg-greenBg text-black px-5 py-3 rounded font-medium inline-flex items-center justify-center gap-2"
                   onClick={() => setOpen(false)}
                 >
                   Enroll now
