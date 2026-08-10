@@ -6,8 +6,9 @@ import CourseTestimonials from "@/components/CourseTestimonials";
 import Newsletter from "@/components/Newsletter";
 
 export const metadata = {
-  title: "Course Detail | Grey Dental",
-  description: "Course details and enrollment for Grey Dental continuing education.",
+  title: "Foundations of Clinical Endodontics | Grey Dental",
+  description:
+    "Module titles and learning outcomes for Foundations of Clinical Endodontics — from patient care through complication management.",
 };
 
 type CourseDetailPageProps = {
