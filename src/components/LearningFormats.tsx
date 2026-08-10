@@ -59,10 +59,10 @@ export default function LearningFormats() {
 
   const badgeClass = {
     "outline-blue":
-      "border border-[#6B7585] text-[#003283] bg-transparent",
-    solid: "bg-[#08386D] text-white border border-[#08386D]",
+      "border border-[#777779] text-[#3A738D] bg-transparent",
+    solid: "bg-[#2F5F75] text-white border border-[#2F5F75]",
     "outline-dark":
-      "border border-[#6B7585] text-[#08386D] bg-transparent",
+      "border border-[#777779] text-[#2F5F75] bg-transparent",
   } as const;
 
   return (
@@ -70,18 +70,18 @@ export default function LearningFormats() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col items-center">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-10 md:mb-14 max-w-3xl">
-          <div className="inline-flex border border-[#6B7585] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-5 sm:mb-6">
-            <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.14em] text-[#08386D] uppercase">
+          <div className="inline-flex border border-[#777779] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-5 sm:mb-6">
+            <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.14em] text-[#2F5F75] uppercase">
               LEARNING FORMATS
             </span>
           </div>
 
-          <h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight mb-4 sm:mb-5">
+          <h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#3A738D] leading-[1.15] tracking-tight mb-4 sm:mb-5">
             Learn the way that fits
             <br className="hidden sm:block" /> your schedule
           </h2>
 
-          <p className="text-[#6B7585] font-regular_18pt text-[15px] sm:text-base md:text-[17px] leading-relaxed">
+          <p className="text-[#777779] font-regular_18pt text-[15px] sm:text-base md:text-[17px] leading-relaxed">
             Every course is available in at least one of three formats below.
           </p>
         </div>
@@ -91,12 +91,12 @@ export default function LearningFormats() {
           {formats.map((format) => (
             <div
               key={format.title}
-              className="flex flex-col w-full lg:flex-1 min-h-0 min-w-0 rounded-[20px] md:rounded-[24px] border border-[#E5E7EB] p-6 sm:p-7 md:p-8 shadow-[0_8px_24px_rgba(0,23,60,0.06)]"
+              className="flex flex-col w-full lg:flex-1 min-h-0 min-w-0 rounded-[20px] md:rounded-[24px] border border-[#E5E7EB] p-6 sm:p-7 md:p-8 shadow-[0_8px_24px_rgba(58,115,141,0.06)]"
               style={
                 format.gradient
                   ? {
                       background:
-                        "linear-gradient(180deg, #F7FCFF 0%, #FFFFFF 100%)",
+                        "linear-gradient(180deg, #F4F7F8 0%, #FFFFFF 100%)",
                     }
                   : { background: "#FFFFFF" }
               }
@@ -117,11 +117,11 @@ export default function LearningFormats() {
                 </span>
               </div>
 
-              <h3 className="text-[20px] sm:text-[22px] font-semi_bold_24pt text-[#00173C] mb-3 tracking-tight">
+              <h3 className="text-[20px] sm:text-[22px] font-semi_bold_24pt text-[#3A738D] mb-3 tracking-tight">
                 {format.title}
               </h3>
 
-              <p className="text-[#6B7585] font-regular_18pt text-[14px] sm:text-[15px] leading-relaxed mb-6">
+              <p className="text-[#777779] font-regular_18pt text-[14px] sm:text-[15px] leading-relaxed mb-6">
                 {format.description}
               </p>
 
@@ -135,7 +135,7 @@ export default function LearningFormats() {
                       height={15}
                       className="w-[15px] h-[15px] flex-shrink-0"
                     />
-                    <span className="text-[#00173C] font-regular_18pt text-[14px] sm:text-[15px]">
+                    <span className="text-[#3A738D] font-regular_18pt text-[14px] sm:text-[15px]">
                       {feature}
                     </span>
                   </li>
@@ -147,8 +147,8 @@ export default function LearningFormats() {
                   href={format.href}
                   className={
                     format.buttonVariant === "green"
-                      ? "inline-flex w-full items-center justify-center bg-[#41F39B] text-[#011A43] px-5 py-3 rounded-[8px] font-inter-medium_18pt text-[15px]"
-                      : "inline-flex w-full items-center justify-center bg-white border border-[#00173C] text-[#00173C] px-5 py-3 rounded-[8px] font-inter-medium_18pt text-[15px]"
+                      ? "inline-flex w-full items-center justify-center bg-[#5ECAA0] text-black px-5 py-3 rounded-[8px] font-inter-medium_18pt text-[15px]"
+                      : "inline-flex w-full items-center justify-center bg-white border border-[#3A738D] text-[#3A738D] px-5 py-3 rounded-[8px] font-inter-medium_18pt text-[15px]"
                   }
                 >
                   {format.cta}

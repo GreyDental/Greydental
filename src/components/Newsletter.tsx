@@ -2,7 +2,7 @@
 
 export default function Newsletter() {
   return (
-    <section className="w-[100vw] relative left-1/2 -translate-x-1/2 bg-[#F9FCFE] py-16 sm:py-20 md:py-24 border-t border-gray-50 flex flex-col overflow-x-hidden">
+    <section className="w-[100vw] relative left-1/2 -translate-x-1/2 bg-[#F4F7F8] py-16 sm:py-20 md:py-24 border-t border-gray-50 flex flex-col overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full min-w-0 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-16 xl:gap-24">
         
         {/* Left Side: Heading */}

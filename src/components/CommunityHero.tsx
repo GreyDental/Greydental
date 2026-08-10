@@ -6,7 +6,7 @@ export default function CommunityHero() {
     <section
       className="w-[100vw] relative left-1/2 -translate-x-1/2 z-0 flex flex-col"
       style={{
-        background: "linear-gradient(90deg, #08386D 0%, #00173C 100%)",
+        background: "linear-gradient(90deg, #2F5F75 0%, #3A738D 100%)",
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-28 sm:pb-32 md:pb-40 lg:pb-48 w-full min-w-0 flex flex-col">
@@ -37,7 +37,7 @@ export default function CommunityHero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto min-w-0">
               <Link
                 href="#communities"
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#41F39B] hover:bg-[#79F0B5] text-[#00173C] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#5ECAA0] hover:bg-[#7ED9B5] text-black px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 Join Community
                 <span aria-hidden="true">→</span>
@@ -45,7 +45,7 @@ export default function CommunityHero() {
 
               <Link
                 href="/education#pathways"
-                className="inline-flex items-center justify-center w-full sm:w-auto bg-transparent border border-[#FFFFFF] text-[#FFFFFF] hover:bg-white hover:text-[#00173C] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
+                className="inline-flex items-center justify-center w-full sm:w-auto bg-transparent border border-[#FFFFFF] text-[#FFFFFF] hover:bg-white hover:text-[#3A738D] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 View Certificate Pathways
               </Link>

@@ -34,11 +34,11 @@ export default function CourseTestimonials() {
   };
 
   return (
-    <section className="w-[100vw] relative left-1/2 -translate-x-1/2 bg-[#F9FCFE] py-14 sm:py-16 md:py-20 overflow-x-hidden">
+    <section className="w-[100vw] relative left-1/2 -translate-x-1/2 bg-[#F4F7F8] py-14 sm:py-16 md:py-20 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-10 sm:gap-12 md:gap-14 w-full min-w-0">
-        {/* Badge — 1px #00173C border */}
-        <div className="inline-flex self-start items-center px-4 py-1.5 rounded-full bg-white border border-[#00173C]">
-          <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.14em] text-[#00173C] uppercase">
+        {/* Badge — 1px #3A738D border */}
+        <div className="inline-flex self-start items-center px-4 py-1.5 rounded-full bg-white border border-[#3A738D]">
+          <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.14em] text-[#3A738D] uppercase">
             Student Testimonials
           </span>
         </div>
@@ -52,7 +52,7 @@ export default function CourseTestimonials() {
             height={52}
             className="w-10 h-auto sm:w-12 md:w-[56px] flex-shrink-0 mt-1"
           />
-          <p className="text-[#111F39] font-semi_bold_24pt text-[22px] sm:text-[26px] md:text-[32px] lg:text-[36px] leading-[1.35] tracking-tight max-w-4xl min-w-0">
+          <p className="text-[#3A738D] font-semi_bold_24pt text-[22px] sm:text-[26px] md:text-[32px] lg:text-[36px] leading-[1.35] tracking-tight max-w-4xl min-w-0">
             {active.quote}
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function CourseTestimonials() {
               aria-label="Previous testimonial"
               className={`w-12 h-12 sm:w-[56px] sm:h-[56px] rounded-full flex items-center justify-center transition-colors ${
                 canGoPrev
-                  ? "bg-[#08386D] hover:opacity-90"
+                  ? "bg-[#2F5F75] hover:opacity-90"
                   : "bg-[#F0F0F0] cursor-default"
               }`}
             >
@@ -80,7 +80,7 @@ export default function CourseTestimonials() {
               >
                 <path
                   d="M11.25 4.5L6.75 9l4.5 4.5"
-                  stroke={canGoPrev ? "#FFFFFF" : "#8C8C8C"}
+                  stroke={canGoPrev ? "#FFFFFF" : "#777779"}
                   strokeWidth="1.75"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -94,7 +94,7 @@ export default function CourseTestimonials() {
               aria-label="Next testimonial"
               className={`w-12 h-12 sm:w-[56px] sm:h-[56px] rounded-full flex items-center justify-center transition-colors ${
                 canGoNext
-                  ? "bg-[#08386D] hover:opacity-90"
+                  ? "bg-[#2F5F75] hover:opacity-90"
                   : "bg-[#F0F0F0] cursor-default"
               }`}
             >
@@ -107,7 +107,7 @@ export default function CourseTestimonials() {
               >
                 <path
                   d="M6.75 4.5L11.25 9l-4.5 4.5"
-                  stroke={canGoNext ? "#FFFFFF" : "#8C8C8C"}
+                  stroke={canGoNext ? "#FFFFFF" : "#777779"}
                   strokeWidth="1.75"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -117,7 +117,7 @@ export default function CourseTestimonials() {
           </div>
 
           <div className="flex items-center gap-4 order-1 sm:order-2 min-w-0 self-center sm:mx-auto">
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-[3px] border-[#41F39B] flex-shrink-0">
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-[3px] border-[#5ECAA0] flex-shrink-0">
               <Image
                 src={active.avatar}
                 alt={active.name}
@@ -127,10 +127,10 @@ export default function CourseTestimonials() {
               />
             </div>
             <div className="flex flex-col min-w-0">
-              <p className="text-[#08386D] font-semi_bold_24pt text-[16px] sm:text-[18px] leading-tight">
+              <p className="text-[#2F5F75] font-semi_bold_24pt text-[16px] sm:text-[18px] leading-tight">
                 {active.name}
               </p>
-              <p className="text-[#6B7585] font-regular_18pt text-[13px] sm:text-[14px] mt-1">
+              <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[14px] mt-1">
                 {active.role}
               </p>
             </div>

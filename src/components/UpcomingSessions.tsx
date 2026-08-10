@@ -62,15 +62,15 @@ export default function UpcomingSessions() {
   return (
     <section
       id="upcoming"
-      className="w-[100vw] relative left-1/2 -translate-x-1/2 bg-[#F9FCFE] py-12 sm:py-16 md:py-20 lg:py-24 overflow-x-hidden"
+      className="w-[100vw] relative left-1/2 -translate-x-1/2 bg-[#F4F7F8] py-12 sm:py-16 md:py-20 lg:py-24 overflow-x-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-14 w-full min-w-0">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 sm:gap-4 md:gap-6 w-full min-w-0">
-          <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight min-w-0">
+          <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#3A738D] leading-[1.15] tracking-tight min-w-0">
             Upcoming Sessions
           </h2>
-          <p className="text-[#6B7585] font-regular_18pt text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed max-w-md md:text-right min-w-0">
+          <p className="text-[#777779] font-regular_18pt text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed max-w-md md:text-right min-w-0">
             Every session is capped at a small group size for hands-on
             attention.
           </p>
@@ -87,15 +87,15 @@ export default function UpcomingSessions() {
             >
               {/* Text card */}
               <div className="flex flex-col flex-1 min-w-0 w-full bg-white border border-[#BCBCBC] rounded-[16px] sm:rounded-[20px] p-4 sm:p-6 md:p-8">
-                <span className="inline-flex self-start items-center bg-[#08386D] text-white text-[10px] sm:text-[11px] font-semi_bold_24pt tracking-[0.1em] uppercase px-3 py-1 rounded-full mb-3 sm:mb-4 md:mb-5">
+                <span className="inline-flex self-start items-center bg-[#2F5F75] text-white text-[10px] sm:text-[11px] font-semi_bold_24pt tracking-[0.1em] uppercase px-3 py-1 rounded-full mb-3 sm:mb-4 md:mb-5">
                   {session.badge}
                 </span>
 
-                <h3 className="text-[20px] sm:text-[24px] md:text-[28px] font-semi_bold_24pt text-[#00173C] leading-snug tracking-tight mb-2 sm:mb-3">
+                <h3 className="text-[20px] sm:text-[24px] md:text-[28px] font-semi_bold_24pt text-[#3A738D] leading-snug tracking-tight mb-2 sm:mb-3">
                   {session.title}
                 </h3>
 
-                <p className="text-[#6B7585] font-regular_18pt text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed mb-4 sm:mb-5 md:mb-6 max-w-xl">
+                <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed mb-4 sm:mb-5 md:mb-6 max-w-xl">
                   {session.description}
                 </p>
 
@@ -104,7 +104,7 @@ export default function UpcomingSessions() {
                   {session.meta.map((item) => (
                     <div
                       key={item.label}
-                      className="flex flex-row items-center justify-center gap-1.5 sm:gap-2 bg-[#F9FCFE] border border-[#DADADA] rounded-full px-3 py-2 sm:px-3.5 sm:py-2 w-full sm:flex-1 min-w-0"
+                      className="flex flex-row items-center justify-center gap-1.5 sm:gap-2 bg-[#F4F7F8] border border-[#DADADA] rounded-full px-3 py-2 sm:px-3.5 sm:py-2 w-full sm:flex-1 min-w-0"
                     >
                       <Image
                         src={item.icon}
@@ -113,7 +113,7 @@ export default function UpcomingSessions() {
                         height={16}
                         className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0"
                       />
-                      <span className="text-[#00173C] font-regular_18pt text-[12px] sm:text-[12px] md:text-[13px] whitespace-nowrap truncate">
+                      <span className="text-[#3A738D] font-regular_18pt text-[12px] sm:text-[12px] md:text-[13px] whitespace-nowrap truncate">
                         {item.label}
                       </span>
                     </div>
@@ -122,7 +122,7 @@ export default function UpcomingSessions() {
 
                 <Link
                   href="/workshops#upcoming"
-                  className="mt-auto inline-flex items-center justify-center w-full bg-white border border-[#00173C] text-[#00173C] hover:bg-[#41F39B] hover:border-[#41F39B] px-5 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
+                  className="mt-auto inline-flex items-center justify-center w-full bg-white border border-[#3A738D] text-[#3A738D] hover:bg-[#5ECAA0] hover:border-[#5ECAA0] hover:text-black px-5 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
                 >
                   {session.cta}
                 </Link>

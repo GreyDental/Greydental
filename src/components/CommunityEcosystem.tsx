@@ -24,18 +24,18 @@ export default function CommunityEcosystem() {
           className="flex flex-col w-full min-w-0 bg-white rounded-[20px] sm:rounded-[28px] md:rounded-[32px] px-5 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-12 lg:py-14"
           style={{
             boxShadow:
-              "0px 10px 21px 0px rgba(0, 23, 60, 0.08), 0px 24px 48px 0px rgba(0, 23, 60, 0.06), 0px 40px 64px 0px rgba(0, 23, 60, 0.04)",
+              "0px 10px 21px 0px rgba(58, 115, 141, 0.08), 0px 24px 48px 0px rgba(58, 115, 141, 0.06), 0px 40px 64px 0px rgba(58, 115, 141, 0.04)",
           }}
         >
           {/* Header */}
           <div className="flex flex-col items-start gap-4 sm:gap-5 mb-8 sm:mb-10 md:mb-12 w-full min-w-0">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#6B7585] bg-white">
-              <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.12em] text-[#08386D] uppercase">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#777779] bg-white">
+              <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.12em] text-[#2F5F75] uppercase">
                 Connect Anywhere
               </span>
             </div>
 
-            <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight max-w-3xl">
+            <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#3A738D] leading-[1.15] tracking-tight max-w-3xl">
               An Integrated Ecosystem for Collaboration
             </h2>
           </div>
@@ -43,7 +43,7 @@ export default function CommunityEcosystem() {
           {/* Cards */}
           <div className="flex flex-col lg:flex-row gap-4 sm:gap-5 md:gap-6 w-full min-w-0 items-stretch">
             {/* WhatsApp */}
-            <article className="flex flex-col flex-1 min-w-0 w-full min-h-[240px] sm:min-h-[280px] bg-white border border-[#E8EEF4] rounded-[16px] sm:rounded-[20px] p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,23,60,0.06)]">
+            <article className="flex flex-col flex-1 min-w-0 w-full min-h-[240px] sm:min-h-[280px] bg-white border border-[#E8EEF4] rounded-[16px] sm:rounded-[20px] p-6 sm:p-8 shadow-[0_4px_20px_rgba(58,115,141,0.06)]">
               <div className="flex flex-1 flex-col items-center justify-center gap-6 sm:gap-8">
                 <Image
                   src="/Community/Overlay.png"
@@ -52,14 +52,14 @@ export default function CommunityEcosystem() {
                   height={101}
                   className="w-14 h-14 sm:w-16 sm:h-16 md:w-[72px] md:h-[72px] object-contain"
                 />
-                <p className="text-[#00173C] font-semi_bold_24pt text-[16px] sm:text-[18px] md:text-[20px] leading-snug text-center">
+                <p className="text-[#3A738D] font-semi_bold_24pt text-[16px] sm:text-[18px] md:text-[20px] leading-snug text-center">
                   WhatsApp Community
                 </p>
               </div>
             </article>
 
             {/* Facebook */}
-            <article className="flex flex-col flex-1 min-w-0 w-full min-h-[240px] sm:min-h-[280px] bg-white border border-[#E8EEF4] rounded-[16px] sm:rounded-[20px] p-6 sm:p-8 shadow-[0_4px_20px_rgba(0,23,60,0.06)]">
+            <article className="flex flex-col flex-1 min-w-0 w-full min-h-[240px] sm:min-h-[280px] bg-white border border-[#E8EEF4] rounded-[16px] sm:rounded-[20px] p-6 sm:p-8 shadow-[0_4px_20px_rgba(58,115,141,0.06)]">
               <div className="flex flex-1 flex-col items-center justify-center gap-6 sm:gap-8">
                 <Image
                   src="/Community/logo-facebook.svg"
@@ -68,14 +68,14 @@ export default function CommunityEcosystem() {
                   height={64}
                   className="w-14 h-14 sm:w-16 sm:h-16 md:w-[72px] md:h-[72px]"
                 />
-                <p className="text-[#00173C] font-semi_bold_24pt text-[16px] sm:text-[18px] md:text-[20px] leading-snug text-center">
+                <p className="text-[#3A738D] font-semi_bold_24pt text-[16px] sm:text-[18px] md:text-[20px] leading-snug text-center">
                   Facebook Community
                 </p>
               </div>
             </article>
 
             {/* Events */}
-            <article className="flex flex-col flex-1 min-w-0 w-full min-h-[240px] sm:min-h-[280px] bg-[#00173C] rounded-[16px] sm:rounded-[20px] p-6 sm:p-7">
+            <article className="flex flex-col flex-1 min-w-0 w-full min-h-[240px] sm:min-h-[280px] bg-[#3A738D] rounded-[16px] sm:rounded-[20px] p-6 sm:p-7">
               <ul className="flex flex-col gap-3.5 sm:gap-4 flex-1 mb-6 sm:mb-8">
                 {events.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 min-w-0">
@@ -95,7 +95,7 @@ export default function CommunityEcosystem() {
 
               <Link
                 href="/workshops"
-                className="mt-auto inline-flex items-center justify-center w-full bg-[#41F39B] hover:bg-[#79F0B5] text-[#00173C] px-5 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
+                className="mt-auto inline-flex items-center justify-center w-full bg-[#5ECAA0] hover:bg-[#7ED9B5] text-black px-5 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 View Events
               </Link>

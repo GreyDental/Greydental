@@ -127,13 +127,13 @@ export default function CommunityClinicalCircles() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 sm:gap-8 mb-8 sm:mb-10 md:mb-12 w-full min-w-0">
           <div className="flex flex-col items-start gap-4 sm:gap-5 min-w-0">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#6B7585] bg-white">
-              <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.12em] text-[#08386D] uppercase">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#777779] bg-white">
+              <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.12em] text-[#2F5F75] uppercase">
                 Curated Specialties
               </span>
             </div>
 
-            <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight">
+            <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#3A738D] leading-[1.15] tracking-tight">
               Featured Clinical Circles
             </h2>
           </div>
@@ -146,7 +146,7 @@ export default function CommunityClinicalCircles() {
               disabled={!canScrollLeft}
               className={`inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full transition-colors ${
                 canScrollLeft
-                  ? "bg-[#00173C] text-white hover:bg-[#08386D]"
+                  ? "bg-[#3A738D] text-white hover:bg-[#2F5F75]"
                   : "bg-[#E8EEF4] text-[#9AA3B2] cursor-default"
               }`}
             >
@@ -159,7 +159,7 @@ export default function CommunityClinicalCircles() {
               disabled={!canScrollRight}
               className={`inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full transition-colors ${
                 canScrollRight
-                  ? "bg-[#00173C] text-white hover:bg-[#08386D]"
+                  ? "bg-[#3A738D] text-white hover:bg-[#2F5F75]"
                   : "bg-[#E8EEF4] text-[#9AA3B2] cursor-default"
               }`}
             >
@@ -181,23 +181,23 @@ export default function CommunityClinicalCircles() {
             >
               <div
                 className={`inline-flex self-start items-center px-2.5 py-1 rounded-full mb-4 sm:mb-5 ${
-                  circle.badge === "invite" ? "bg-[#41F39B]" : "bg-[#EEF1F5]"
+                  circle.badge === "invite" ? "bg-[#5ECAA0]" : "bg-[#EEF1F5]"
                 }`}
               >
                 <span
                   className={`text-[11px] sm:text-[12px] font-inter-medium_18pt leading-none ${
-                    circle.badge === "invite" ? "text-white" : "text-[#6B7585]"
+                    circle.badge === "invite" ? "text-black" : "text-[#777779]"
                   }`}
                 >
                   {circle.badgeLabel}
                 </span>
               </div>
 
-              <h3 className="text-[#00173C] font-semi_bold_24pt text-[16px] sm:text-[17px] md:text-[18px] leading-snug tracking-tight mb-2 sm:mb-2.5">
+              <h3 className="text-[#3A738D] font-semi_bold_24pt text-[16px] sm:text-[17px] md:text-[18px] leading-snug tracking-tight mb-2 sm:mb-2.5">
                 {circle.title}
               </h3>
 
-              <p className="text-[#6B7585] font-regular_18pt text-[13px] sm:text-[14px] leading-relaxed">
+              <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[14px] leading-relaxed">
                 {circle.description}
               </p>
             </article>

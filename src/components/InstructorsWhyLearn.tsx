@@ -49,7 +49,7 @@ export default function InstructorsWhyLearn() {
 
         {/* Copy + points */}
         <div className="flex flex-col flex-1 min-w-0 w-full">
-          <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight mb-8 sm:mb-10">
+          <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] font-semi_bold_24pt text-[#3A738D] leading-[1.15] tracking-tight mb-8 sm:mb-10">
             Why Learn from Our Instructors?
           </h2>
 
@@ -69,10 +69,10 @@ export default function InstructorsWhyLearn() {
                   />
                 </div>
                 <div className="flex flex-col min-w-0 flex-1 pt-0.5">
-                  <h3 className="text-[#00173C] font-semi_bold_24pt text-[16px] sm:text-[17px] md:text-[18px] leading-snug tracking-tight mb-1.5 sm:mb-2">
+                  <h3 className="text-[#3A738D] font-semi_bold_24pt text-[16px] sm:text-[17px] md:text-[18px] leading-snug tracking-tight mb-1.5 sm:mb-2">
                     {point.title}
                   </h3>
-                  <p className="text-[#6B7585] font-regular_18pt text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed">
+                  <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed">
                     {point.description}
                   </p>
                 </div>

@@ -5,19 +5,29 @@
   --font-regular_18pt: "Inter Regular 18pt", sans-serif;
   --font-semi_bold_24pt: "Inter SemiBold 24pt", sans-serif;
 
-  --color-greyBg: #F9FCFE;
+  /* Neutrals */
+  --color-greyBg: #F4F7F8;
   --color-whiteBg: #FFFFFF;
-  --color-border: #DEE5F0;
-  --color-blueText: #1A3D63;
-  --color-blueGradient1: #042862;
-  --color-blueGradient2: #083987;
-  --color-blueGradient3: #003EA2;
-  --color-greenGradient1: #41F39BCC;
-  --color-blueBg: #00173C;
-  --color-blueBtnBg: #08386D;
-  --color-darkBlueText: #0A1931;
-  --color-greenBg: #41F39BCC;
-  --color-green:  #41F39B;
+  --color-border: #D5DEE2;
+  --color-brandGrey: #777779;
+  --color-charcoal: #3D3D3F;
+
+  /* Azure family */
+  --color-blueText: #3A738D;
+  --color-darkBlueText: #3A738D;
+  --color-blueBg: #3A738D;
+  --color-blueBtnBg: #2F5F75;
+  --color-blueGradient1: #2F5F75;
+  --color-blueGradient2: #3A738D;
+  --color-blueGradient3: #5A8FA5;
+
+  /* Bright accent — pairs with azure without looking muddy */
+  --color-green: #5ECAA0;
+  --color-greenBg: #5ECAA0;
+  --color-greenGradient1: #5ECAA0CC;
+  --color-accent: #5ECAA0;
+  --color-accentHover: #7ED9B5;
+  --color-accentSoft: #E5F8F0;
 }
 
 @font-face {
@@ -52,4 +62,3 @@ body {
   font-style: normal;
   font-display: swap;
 }
-

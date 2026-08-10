@@ -14,16 +14,16 @@ export default function PartnersHero() {
           {/* Copy */}
           <div className="flex flex-col flex-1 min-w-0 w-full items-start text-left order-1">
             <div className="inline-flex items-center bg-white border border-[#E9E9E9] px-4 py-1.5 rounded-full mb-5 sm:mb-6">
-              <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt font-bold tracking-[0.12em] text-[#00173C]">
+              <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt font-bold tracking-[0.12em] text-[#3A738D]">
                 Partners
               </span>
             </div>
 
-            <h1 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[52px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight mb-4 sm:mb-5 max-w-xl">
+            <h1 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[52px] font-semi_bold_24pt text-[#3A738D] leading-[1.15] tracking-tight mb-4 sm:mb-5 max-w-xl">
               Our Partners &amp; Collaborators
             </h1>
 
-            <p className="text-[#6B7585] font-regular_18pt text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed max-w-md mb-7 sm:mb-8">
+            <p className="text-[#777779] font-regular_18pt text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed max-w-md mb-7 sm:mb-8">
               We proudly collaborate with leading organizations, institutions,
               and industry experts who share our commitment to advancing dental
               education.
@@ -31,7 +31,7 @@ export default function PartnersHero() {
 
             <Link
               href="#become-a-partner"
-              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#00173C] hover:bg-[#08386D] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#3A738D] hover:bg-[#2F5F75] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
             >
               Become a Partner
               <span aria-hidden="true">→</span>

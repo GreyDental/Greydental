@@ -52,10 +52,10 @@ export default function InstructorsFaculty() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full min-w-0 flex flex-col items-center">
         <div className="flex flex-col items-center text-center gap-3 sm:gap-4 mb-10 sm:mb-12 md:mb-14 max-w-2xl min-w-0">
-          <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight">
+          <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[44px] font-semi_bold_24pt text-[#3A738D] leading-[1.15] tracking-tight">
             Meet Our Expert Faculty
           </h2>
-          <p className="text-[#6B7585] font-regular_18pt text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+          <p className="text-[#777779] font-regular_18pt text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
             Learn from highly qualified dental professionals who bring years of
             clinical experience, academic excellence, and a passion for teaching.
           </p>
@@ -82,20 +82,20 @@ export default function InstructorsFaculty() {
               </div>
 
               <div className="flex flex-col flex-1 min-w-0 px-5 sm:px-6 pt-5 sm:pt-6 pb-5 sm:pb-6">
-                <h3 className="text-[#00173C] font-semi_bold_24pt text-[18px] sm:text-[20px] leading-snug tracking-tight mb-1">
+                <h3 className="text-[#3A738D] font-semi_bold_24pt text-[18px] sm:text-[20px] leading-snug tracking-tight mb-1">
                   {member.name}
                 </h3>
-                <p className="text-[#08386D] font-inter-medium_18pt text-[13px] sm:text-[14px] leading-snug mb-3">
+                <p className="text-[#2F5F75] font-inter-medium_18pt text-[13px] sm:text-[14px] leading-snug mb-3">
                   {member.role}
                 </p>
-                <p className="text-[#6B7585] font-regular_18pt text-[13px] sm:text-[14px] leading-relaxed flex-1 mb-5">
+                <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[14px] leading-relaxed flex-1 mb-5">
                   {member.bio}
                 </p>
 
                 <div className="mt-auto pt-4 border-t border-[#E4E4E4]">
                   <Link
                     href="/instructors"
-                    className="inline-flex items-center gap-1.5 text-[#00173C] font-inter-medium_18pt text-[13px] sm:text-[14px] hover:text-[#08386D] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-[#3A738D] font-inter-medium_18pt text-[13px] sm:text-[14px] hover:text-[#2F5F75] transition-colors"
                   >
                     View Profile
                     <span aria-hidden="true">→</span>

@@ -35,7 +35,7 @@ export default function MainHero() {
         {/* Text Content */}
         <div className="flex-1 min-w-0 flex flex-col items-start text-left max-w-2xl w-full">
           {/* Badge */}
-          <div className="inline-flex px-4 py-1.5 rounded-full border border-blue-200 bg-[#F4F8FD] mb-5 sm:mb-6">
+          <div className="inline-flex px-4 py-1.5 rounded-full border border-blue-200 bg-[#E8F1F4] mb-5 sm:mb-6">
             <span className="text-[10px] sm:text-xs font-semi_bold_24pt tracking-widest text-blueText uppercase">
               Preparing future dental professionals
             </span>

@@ -18,7 +18,7 @@ export default function Featured() {
             <p className="text-gray-500 text-[15px] sm:text-[16px] font-regular_18pt">Accredited education from world-class instructors.</p>
           </div>
           <motion.div whileHover="hover" className="inline-block w-full sm:w-auto">
-            <Link href="/courses" className="bg-greenBg text-blueBg px-6 py-2.5 rounded-[4px] font-inter-medium_18pt text-[15px] hover:bg-[#5cd496] transition-colors inline-flex items-center justify-center gap-2 w-full sm:w-auto">
+            <Link href="/courses" className="bg-greenBg text-black px-6 py-2.5 rounded-[4px] font-inter-medium_18pt text-[15px] hover:bg-[#7ED9B5] transition-colors inline-flex items-center justify-center gap-2 w-full sm:w-auto">
               View all courses
               <MotionArrowRight className="w-4 h-4" variants={{ hover: { x: 5 } }} transition={{ duration: 0.2 }} />
             </Link>

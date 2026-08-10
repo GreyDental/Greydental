@@ -8,7 +8,7 @@ export default function Categories() {
         {/* Header Area */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
           <div className="flex-1 min-w-0">
-            <div className="inline-block px-4 py-1.5 rounded-full border border-blue-200 bg-[#F4F8FD] mb-6 text-center">
+            <div className="inline-block px-4 py-1.5 rounded-full border border-blue-200 bg-[#E8F1F4] mb-6 text-center">
               <span className="text-xs font-semi_bold_24pt tracking-widest text-blueText uppercase">
                 Categories we offer
               </span>
@@ -35,10 +35,10 @@ export default function Categories() {
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#141517]/90 via-[#141517]/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#3A738D]/90 via-[#3A738D]/40 to-transparent"></div>
 
             <div className="absolute bottom-0 left-0 p-6 sm:p-8 w-full">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-greenBg rounded-xl flex items-center justify-center text-white mb-4 sm:mb-5 shadow-lg">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-greenBg rounded-xl flex items-center justify-center text-black mb-4 sm:mb-5 shadow-lg">
                 <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24">
                   <path d="M7 3C4 3 2 5 2 8C2 11 4.5 12 5 17C5 19 6 21 8 21C9 21 10 19 10 17V14C10 14 12 14 12 14V17C12 19 13 21 14 21C16 21 17 19 17 17C17.5 12 20 11 20 8C20 5 18 3 15 3C13 3 12 5 11 5C10 5 9 3 7 3Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -67,7 +67,7 @@ export default function Categories() {
               href="/workshops"
               className="flex-1 min-w-0 bg-blueBg rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 flex flex-col justify-center shadow-[12px_12px_24px_rgba(0,0,0,0.15)] hover:shadow-[16px_16px_32px_rgba(0,0,0,0.25)] transition-shadow min-h-[160px]"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-greenBg rounded-xl flex items-center justify-center text-white mb-5 sm:mb-6 shadow-lg">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-greenBg rounded-xl flex items-center justify-center text-black mb-5 sm:mb-6 shadow-lg">
                 <svg className="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>

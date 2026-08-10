@@ -104,12 +104,12 @@ export default function CoursesListing() {
                 type="button"
                 onClick={() => setActiveTab(tab)}
                 className={`pb-3 text-[14px] sm:text-[15px] font-inter-medium_18pt transition-colors relative ${
-                  activeTab === tab ? "text-[#00173C]" : "text-[#6B7585]"
+                  activeTab === tab ? "text-[#3A738D]" : "text-[#777779]"
                 }`}
               >
                 {tab}
                 {activeTab === tab && (
-                  <span className="absolute left-0 right-0 -bottom-px h-[3px] bg-[#41F39B] rounded-full" />
+                  <span className="absolute left-0 right-0 -bottom-px h-[3px] bg-[#5ECAA0] rounded-full" />
                 )}
               </button>
             ))}
@@ -117,20 +117,20 @@ export default function CoursesListing() {
 
           {showCourseFilters && (
             <>
-              <p className="text-[#6B7585] font-regular_18pt text-[14px] sm:text-[15px] leading-relaxed mt-5 sm:mt-6 mb-6 sm:mb-8 max-w-3xl">
+              <p className="text-[#777779] font-regular_18pt text-[14px] sm:text-[15px] leading-relaxed mt-5 sm:mt-6 mb-6 sm:mb-8 max-w-3xl">
                 Structured, accredited programs with remote or residency
                 completion tracks designed for deep specialization.
               </p>
 
               <div className="flex flex-col lg:flex-row lg:items-center gap-3 sm:gap-4 bg-[#F2FAFF] border border-[#F3F4F6] rounded-[12px] p-3 sm:p-4 mb-8 sm:mb-10 w-full">
                 <div className="flex items-center gap-2 bg-white border border-[#E5E7EB] rounded-[8px] px-3 py-2.5 flex-1 min-w-0 w-full">
-                  <Search className="w-4 h-4 text-[#6B7585] flex-shrink-0" />
+                  <Search className="w-4 h-4 text-[#777779] flex-shrink-0" />
                   <input
                     type="search"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     placeholder="Search courses..."
-                    className="w-full min-w-0 outline-none bg-transparent text-[14px] sm:text-[15px] font-regular_18pt text-[#00173C] placeholder:text-[#6B7585]"
+                    className="w-full min-w-0 outline-none bg-transparent text-[14px] sm:text-[15px] font-regular_18pt text-[#3A738D] placeholder:text-[#777779]"
                   />
                 </div>
 
@@ -139,33 +139,33 @@ export default function CoursesListing() {
                     <select
                       value={specialty}
                       onChange={(e) => setSpecialty(e.target.value)}
-                      className="appearance-none w-full lg:w-auto bg-white border border-[#E5E7EB] rounded-[8px] pl-3 pr-9 py-2.5 text-[14px] sm:text-[15px] font-regular_18pt text-[#00173C] outline-none cursor-pointer"
+                      className="appearance-none w-full lg:w-auto bg-white border border-[#E5E7EB] rounded-[8px] pl-3 pr-9 py-2.5 text-[14px] sm:text-[15px] font-regular_18pt text-[#3A738D] outline-none cursor-pointer"
                     >
                       <option>All specialties</option>
                       <option>Endodontics</option>
                       <option>Implantology</option>
                     </select>
-                    <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7585]" />
+                    <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#777779]" />
                   </div>
 
                   <div className="relative w-full sm:flex-1 lg:w-auto">
                     <select
                       value={format}
                       onChange={(e) => setFormat(e.target.value)}
-                      className="appearance-none w-full lg:w-auto bg-white border border-[#E5E7EB] rounded-[8px] pl-3 pr-9 py-2.5 text-[14px] sm:text-[15px] font-regular_18pt text-[#00173C] outline-none cursor-pointer"
+                      className="appearance-none w-full lg:w-auto bg-white border border-[#E5E7EB] rounded-[8px] pl-3 pr-9 py-2.5 text-[14px] sm:text-[15px] font-regular_18pt text-[#3A738D] outline-none cursor-pointer"
                     >
                       <option>All formats</option>
                       <option>Remote</option>
                       <option>Residency</option>
                       <option>Hybrid</option>
                     </select>
-                    <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7585]" />
+                    <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#777779]" />
                   </div>
 
                   <button
                     type="button"
                     onClick={clearAll}
-                    className="text-[#6B7585] font-regular_18pt text-[14px] sm:text-[15px] hover:text-[#00173C] transition-colors self-start sm:self-center whitespace-nowrap"
+                    className="text-[#777779] font-regular_18pt text-[14px] sm:text-[15px] hover:text-[#3A738D] transition-colors self-start sm:self-center whitespace-nowrap"
                   >
                     Clear all
                   </button>
@@ -176,7 +176,7 @@ export default function CoursesListing() {
                 {filtered.map((course) => (
                   <article
                     key={course.id}
-                    className="flex flex-col min-w-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] bg-white border border-[#E5E7EB] rounded-[16px] overflow-hidden shadow-[0_4px_20px_rgba(0,23,60,0.04)]"
+                    className="flex flex-col min-w-0 w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)] bg-white border border-[#E5E7EB] rounded-[16px] overflow-hidden shadow-[0_4px_20px_rgba(58,115,141,0.04)]"
                   >
                     <div className="relative w-full aspect-[16/10]">
                       <Image
@@ -186,33 +186,33 @@ export default function CoursesListing() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover"
                       />
-                      <span className="absolute top-3 left-3 bg-white/95 border border-white/80 text-[#00173C] text-[11px] font-semi_bold_24pt tracking-[0.08em] uppercase px-3 py-1 rounded-full">
+                      <span className="absolute top-3 left-3 bg-white/95 border border-white/80 text-[#3A738D] text-[11px] font-semi_bold_24pt tracking-[0.08em] uppercase px-3 py-1 rounded-full">
                         {course.badge}
                       </span>
                     </div>
 
                     <div className="flex flex-col flex-grow p-5 sm:p-6">
-                      <h3 className="text-[17px] sm:text-[18px] font-semi_bold_24pt text-[#08386D] leading-snug mb-2">
+                      <h3 className="text-[17px] sm:text-[18px] font-semi_bold_24pt text-[#2F5F75] leading-snug mb-2">
                         {course.title}
                       </h3>
-                      <p className="text-[#6B7585] font-regular_18pt text-[13px] sm:text-[14px] mb-3">
+                      <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[14px] mb-3">
                         {course.meta}
                       </p>
 
                       <div className="flex items-center gap-1.5 mb-5">
-                        <Star className="w-3.5 h-3.5 fill-[#41F39B] text-[#41F39B]" />
-                        <span className="text-[#111F39] font-inter-medium_18pt text-[13px] sm:text-[14px]">
+                        <Star className="w-3.5 h-3.5 fill-[#5ECAA0] text-[#5ECAA0]" />
+                        <span className="text-[#3A738D] font-inter-medium_18pt text-[13px] sm:text-[14px]">
                           {course.rating.toFixed(1)} ({course.reviews})
                         </span>
                       </div>
 
                       <div className="mt-auto pt-4 border-t border-[#E5E7EB] flex flex-row items-center justify-between gap-3">
-                        <span className="text-[#111F39] font-semi_bold_24pt text-[16px] sm:text-[17px]">
+                        <span className="text-[#3A738D] font-semi_bold_24pt text-[16px] sm:text-[17px]">
                           {course.price}
                         </span>
                         <Link
                           href={course.href}
-                          className="inline-flex items-center gap-1.5 text-[#08386D] font-inter-medium_18pt text-[14px] sm:text-[15px] hover:opacity-80 transition-opacity flex-shrink-0"
+                          className="inline-flex items-center gap-1.5 text-[#2F5F75] font-inter-medium_18pt text-[14px] sm:text-[15px] hover:opacity-80 transition-opacity flex-shrink-0"
                         >
                           Enroll Now
                           <span aria-hidden="true">→</span>
@@ -223,7 +223,7 @@ export default function CoursesListing() {
                 ))}
 
                 {filtered.length === 0 && (
-                  <p className="text-[#6B7585] font-regular_18pt text-[15px] py-8 w-full">
+                  <p className="text-[#777779] font-regular_18pt text-[15px] py-8 w-full">
                     No courses match your filters.
                   </p>
                 )}

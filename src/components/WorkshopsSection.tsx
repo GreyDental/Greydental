@@ -29,17 +29,17 @@ export default function WorkshopsSection({
     <section
       id="workshops"
       className={`w-[100vw] relative left-1/2 -translate-x-1/2 py-12 sm:py-16 md:py-20 lg:py-24 ${
-        tinted ? "bg-[#F9FCFE]" : "bg-white"
+        tinted ? "bg-[#F4F7F8]" : "bg-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col">
         <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 items-stretch w-full">
           {/* Blue feature card */}
           <div
-            className="flex flex-col justify-between w-full lg:w-[42%] xl:w-[38%] lg:flex-shrink-0 min-h-[240px] sm:min-h-[300px] lg:min-h-full rounded-[20px] sm:rounded-[24px] p-6 sm:p-8 md:p-10 shadow-[0_8px_28px_rgba(0,23,60,0.12)]"
+            className="flex flex-col justify-between w-full lg:w-[42%] xl:w-[38%] lg:flex-shrink-0 min-h-[240px] sm:min-h-[300px] lg:min-h-full rounded-[20px] sm:rounded-[24px] p-6 sm:p-8 md:p-10 shadow-[0_8px_28px_rgba(58,115,141,0.12)]"
             style={{
               background:
-                "linear-gradient(180deg, #003283 0%, #001C4A 50%, #00173C 100%)",
+                "linear-gradient(180deg, #3A738D 0%, #2F5F75 50%, #3A738D 100%)",
             }}
           >
             <div className="flex mb-8 sm:mb-12 lg:mb-14">
@@ -68,22 +68,22 @@ export default function WorkshopsSection({
             {workshops.map((workshop) => (
               <article
                 key={workshop.title}
-                className="flex flex-col flex-1 min-w-0 bg-white border border-[#E5E7EB] rounded-[16px] sm:rounded-[20px] p-5 sm:p-6 md:p-7 shadow-[0_8px_24px_rgba(0,23,60,0.08)]"
+                className="flex flex-col flex-1 min-w-0 bg-white border border-[#E5E7EB] rounded-[16px] sm:rounded-[20px] p-5 sm:p-6 md:p-7 shadow-[0_8px_24px_rgba(58,115,141,0.08)]"
               >
-                <span className="inline-flex self-start bg-[#41F39BCC] text-[#00173C] text-[10px] sm:text-[11px] font-semi_bold_24pt tracking-[0.08em] uppercase px-3 py-1 rounded-full mb-3 sm:mb-4">
+                <span className="inline-flex self-start bg-[#5ECAA0CC] text-black text-[10px] sm:text-[11px] font-semi_bold_24pt tracking-[0.08em] uppercase px-3 py-1 rounded-full mb-3 sm:mb-4">
                   {workshop.tag}
                 </span>
 
-                <h3 className="text-[17px] sm:text-[20px] md:text-[22px] font-semi_bold_24pt text-[#00173C] leading-snug mb-2">
+                <h3 className="text-[17px] sm:text-[20px] md:text-[22px] font-semi_bold_24pt text-[#3A738D] leading-snug mb-2">
                   {workshop.title}
                 </h3>
 
-                <p className="text-[#6B7585] font-regular_18pt text-[13px] sm:text-[15px] leading-relaxed mb-5 sm:mb-6 max-w-2xl">
+                <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[15px] leading-relaxed mb-5 sm:mb-6 max-w-2xl">
                   {workshop.description}
                 </p>
 
                 <div className="mt-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
-                  <div className="flex items-center gap-2 text-[#6B7585]">
+                  <div className="flex items-center gap-2 text-[#777779]">
                     <Image
                       src="/Course_Details/clock.svg"
                       alt=""
@@ -98,7 +98,7 @@ export default function WorkshopsSection({
 
                   <Link
                     href={workshop.href}
-                    className="inline-flex items-center justify-center bg-white border border-[#001A4D] text-[#001A4D] hover:bg-[#001A4D] hover:text-white px-5 py-2.5 rounded-[8px] font-inter-medium_18pt text-[14px] sm:text-[15px] w-full sm:w-auto transition-colors"
+                    className="inline-flex items-center justify-center bg-white border border-[#2F5F75] text-[#2F5F75] hover:bg-[#2F5F75] hover:text-white px-5 py-2.5 rounded-[8px] font-inter-medium_18pt text-[14px] sm:text-[15px] w-full sm:w-auto transition-colors"
                   >
                     Reserve Spot
                   </Link>

@@ -30,22 +30,22 @@ export default function PartnershipProcess() {
       {/* Soft fill starts below the photo overlap */}
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-14 sm:top-20 md:top-28 lg:top-36 bottom-0 bg-[#F9FCFE] -z-10"
+        className="absolute inset-x-0 top-14 sm:top-20 md:top-28 lg:top-36 bottom-0 bg-[#F4F7F8] -z-10"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative w-full min-w-0 flex flex-col">
         <div
-          className="flex flex-col w-full min-w-0 bg-white border border-[#41F39B] rounded-[16px] sm:rounded-[20px] md:rounded-[24px] px-5 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-12 lg:py-14"
+          className="flex flex-col w-full min-w-0 bg-white border border-[#5ECAA0] rounded-[16px] sm:rounded-[20px] md:rounded-[24px] px-5 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-12 lg:py-14"
           style={{
             boxShadow: "0px 30px 65px 0px rgba(214, 214, 214, 0.10)",
           }}
         >
           {/* Header */}
           <div className="flex flex-col items-start gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 w-full min-w-0 max-w-3xl">
-            <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[40px] font-semi_bold_24pt text-[#08386D] leading-[1.15] tracking-tight">
+            <h2 className="text-[26px] sm:text-3xl md:text-4xl lg:text-[40px] font-semi_bold_24pt text-[#2F5F75] leading-[1.15] tracking-tight">
               Our Partnership Process
             </h2>
-            <p className="text-[#6B7585] font-regular_18pt text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+            <p className="text-[#777779] font-regular_18pt text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
               Our streamlined process makes it easy to connect, collaborate, and
               launch initiatives that benefit both our partners and the global
               dental community.
@@ -61,15 +61,15 @@ export default function PartnershipProcess() {
                   idx < steps.length - 1 ? "border-b border-[#E8EEF4]" : ""
                 }`}
               >
-                <span className="text-[#41F39B] font-semi_bold_24pt text-[28px] sm:text-[32px] md:text-[36px] leading-none tracking-tight flex-shrink-0 w-auto sm:w-14 md:w-16">
+                <span className="text-[#5ECAA0] font-semi_bold_24pt text-[28px] sm:text-[32px] md:text-[36px] leading-none tracking-tight flex-shrink-0 w-auto sm:w-14 md:w-16">
                   {step.num}
                 </span>
 
-                <h3 className="text-[#08386D] font-semi_bold_24pt text-[16px] sm:text-[18px] md:text-[20px] leading-snug tracking-tight flex-shrink-0 sm:w-[140px] md:w-[160px]">
+                <h3 className="text-[#2F5F75] font-semi_bold_24pt text-[16px] sm:text-[18px] md:text-[20px] leading-snug tracking-tight flex-shrink-0 sm:w-[140px] md:w-[160px]">
                   {step.title}
                 </h3>
 
-                <p className="text-[#6B7585] font-regular_18pt text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed min-w-0 flex-1 sm:text-right">
+                <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed min-w-0 flex-1 sm:text-right">
                   {step.description}
                 </p>
               </li>

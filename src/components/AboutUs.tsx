@@ -16,7 +16,7 @@ export default function AboutUs() {
           <span className="text-darkBlueText font-semi_bold_24pt">
             Grey Dental is a continuing education platform built by practicing clinicians, for practicing clinicians - combining
           </span>{" "}
-          <span className="text-[#64748B]">
+          <span className="text-[#777779]">
             online modules, hands-on workshops, and real case documentation into one place to sharpen your skills.
           </span>
         </h2>
@@ -25,7 +25,7 @@ export default function AboutUs() {
         <motion.div whileHover="hover" className="inline-block mb-20">
           <Link
             href="/about"
-            className="bg-greenBg text-blueBg px-8 py-3 rounded-full font-semi_bold_24pt text-[15px] hover:bg-[#5cd496] transition-colors inline-flex items-center gap-2"
+            className="bg-greenBg text-black px-8 py-3 rounded-full font-semi_bold_24pt text-[15px] hover:bg-[#7ED9B5] transition-colors inline-flex items-center gap-2"
           >
             ABOUT US
             <MotionArrowRight className="w-4 h-4" variants={{ hover: { x: 5 } }} transition={{ duration: 0.2 }} />

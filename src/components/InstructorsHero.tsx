@@ -10,7 +10,7 @@ const stats = [
 export default function InstructorsHero() {
   return (
     <section
-      className="w-[100vw] relative left-1/2 -translate-x-1/2 overflow-x-hidden flex flex-col bg-[#00173C]"
+      className="w-[100vw] relative left-1/2 -translate-x-1/2 overflow-x-hidden flex flex-col bg-[#3A738D]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24 w-full min-w-0 flex flex-col">
         <div className="flex flex-col lg:flex-row lg:items-center gap-10 sm:gap-12 lg:gap-14 xl:gap-16 w-full min-w-0">
@@ -42,7 +42,7 @@ export default function InstructorsHero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto min-w-0 mb-8 sm:mb-10">
               <Link
                 href="#instructors"
-                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#41F39B] hover:bg-[#79F0B5] text-[#00173C] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#5ECAA0] hover:bg-[#7ED9B5] text-black px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 Explore Our Instructors
                 <span aria-hidden="true">→</span>
@@ -50,7 +50,7 @@ export default function InstructorsHero() {
 
               <Link
                 href="/courses"
-                className="inline-flex items-center justify-center w-full sm:w-auto bg-transparent border border-white text-white hover:bg-white hover:text-[#00173C] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
+                className="inline-flex items-center justify-center w-full sm:w-auto bg-transparent border border-white text-white hover:bg-white hover:text-[#3A738D] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 Join a Course
               </Link>
@@ -84,7 +84,7 @@ export default function InstructorsHero() {
                 className="absolute inset-0 -translate-x-[10px] -translate-y-[10px] sm:-translate-x-[14px] sm:-translate-y-[14px] md:-translate-x-[16px] md:-translate-y-[16px] rounded-[16px] sm:rounded-[20px] md:rounded-[24px] z-0"
                 style={{
                   background:
-                    "linear-gradient(180deg, rgba(65,243,155,0.8) 0%, rgba(65,243,155,0.5) 50%, rgba(65,243,155,0.1) 100%)",
+                    "linear-gradient(180deg, rgba(94,202,160,0.8) 0%, rgba(94,202,160,0.5) 50%, rgba(94,202,160,0.1) 100%)",
                 }}
               />
 

@@ -11,11 +11,11 @@ export default function CommunityJoinCta() {
         <div className="flex flex-col lg:flex-row lg:items-center gap-10 sm:gap-12 lg:gap-14 xl:gap-20 w-full min-w-0">
           {/* Copy */}
           <div className="flex flex-col flex-1 min-w-0 w-full items-start text-left order-1">
-            <h2 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[52px] font-semi_bold_24pt text-[#00173C] leading-[1.15] tracking-tight mb-4 sm:mb-5">
+            <h2 className="text-[28px] sm:text-4xl md:text-5xl lg:text-[52px] font-semi_bold_24pt text-[#3A738D] leading-[1.15] tracking-tight mb-4 sm:mb-5">
               Ready to Join?
             </h2>
 
-            <p className="text-[#6B7585] font-regular_18pt text-[15px] sm:text-[16px] md:text-[17px] leading-relaxed mb-7 sm:mb-8 max-w-lg">
+            <p className="text-[#777779] font-regular_18pt text-[15px] sm:text-[16px] md:text-[17px] leading-relaxed mb-7 sm:mb-8 max-w-lg">
               Take the next step in your professional journey and join the
               world&apos;s most elite clinical network.
             </p>
@@ -23,13 +23,13 @@ export default function CommunityJoinCta() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <Link
                 href="/community#membership"
-                className="inline-flex items-center justify-center bg-[#00173C] hover:bg-[#08386D] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
+                className="inline-flex items-center justify-center bg-[#3A738D] hover:bg-[#2F5F75] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 Join Community Now
               </Link>
               <Link
                 href="#clinical-circles"
-                className="inline-flex items-center justify-center bg-white border border-[#DADADA] hover:border-[#00173C] text-[#00173C] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
+                className="inline-flex items-center justify-center bg-white border border-[#DADADA] hover:border-[#3A738D] text-[#3A738D] px-5 sm:px-6 py-3 sm:py-3.5 rounded-[10px] font-inter-medium_18pt text-[14px] sm:text-[15px] transition-colors"
               >
                 Explore Circles
               </Link>

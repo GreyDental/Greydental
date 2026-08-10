@@ -64,7 +64,7 @@ export default function Testimonials() {
         
         {/* Badge */}
         <div className="bg-greenBg px-6 py-2 rounded-full mb-6">
-          <span className="text-[13px] font-semi_bold_24pt tracking-[0.15em] text-darkBlueText uppercase">
+          <span className="text-[13px] font-semi_bold_24pt tracking-[0.15em] text-black uppercase">
             Testimonials
           </span>
         </div>
