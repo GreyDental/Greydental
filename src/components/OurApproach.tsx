@@ -184,12 +184,13 @@ export default function OurApproach() {
           </h3>
 
           <p className="text-white/85 font-regular_18pt text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed max-w-4xl">
-            At the heart of our teaching is Ihsan—striving for excellence in the
-            smallest details, driven by divine awareness and ethical
-            responsibility. We train clinicians who do not simply seek quick fixes
-            or high volume, but who dedicate themselves to meticulous clinical
-            work, genuine patient care, and honoring the dignity of the dental
-            profession.
+            Ihsan means striving for excellence in the smallest details. We train
+            you to deliver meticulous clinical work with genuine care—precise
+            procedures, clear communication, and treatment plans that put the
+            patient first. Our founder derives inspiration from Ihsan as it brings
+            deeper meaning to the practice of excellence in the Islamic tradition.
+            It constitutes divine awareness: to do anything as if we see Allah,
+            and if one cannot see Him then know that He sees us.
           </p>
         </div>
       </div>

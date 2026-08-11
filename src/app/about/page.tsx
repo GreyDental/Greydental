@@ -6,11 +6,13 @@ import Team from "@/components/Team";
 import Instructors from "@/components/Instructors";
 import StudentSupport from "@/components/StudentSupport";
 import Contributors from "@/components/Contributors";
+import AboutProducts from "@/components/AboutProducts";
 import Newsletter from "@/components/Newsletter";
 
 export const metadata = {
   title: "About Us | Grey Dental",
-  description: "Built by clinicians who never left the operatory. Continuing education taught by practicing specialists.",
+  description:
+    "Grey Dental Academy is Pakistan’s first evidence-based, clinically driven, hybrid dental education platform.",
 };
 
 export default function AboutPage() {
@@ -25,18 +27,18 @@ export default function AboutPage() {
             {/* Pill Badge */}
             <div className="bg-white border border-gray-200/80 px-4 sm:px-5 py-2 rounded-full mb-6 sm:mb-8 shadow-sm">
               <span className="text-[11px] sm:text-[12px] font-semi_bold_24pt tracking-[0.14em] text-darkBlueText uppercase">
-                ABOUT GREY DENTAL
+                About Us
               </span>
             </div>
 
             {/* Title */}
             <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-[54px] font-semi_bold_24pt text-darkBlueText leading-[1.14] tracking-tight mb-6 sm:mb-8">
-              Built by clinicians who never left the operatory
+              Pakistan&apos;s first evidence-based, hybrid dental education platform
             </h1>
 
             {/* Subtitle / Description */}
             <p className="text-gray-500 font-regular_18pt text-[15px] sm:text-[16px] md:text-[18px] leading-relaxed">
-              Grey Dental was founded on a simple idea: continuing education should be taught by people still doing the work. Every course, workshop, and case study on this platform comes from a practicing specialist&apos;s own caseload.
+              Grey Dental Academy is Pakistan&apos;s first evidence-based, clinically driven, and hybrid dental education platform. Founded in August 2025 with the goal to make continued dental education clinically accessible for every dentist. We believe that world-class education should be accessible to every dentist, whether they run a single-chair clinic or a multi-specialty setup.
             </p>
           </div>
 
@@ -49,7 +51,7 @@ export default function AboutPage() {
                 src="/about-us/hero-image.jpg" 
                 fill 
                 className="object-cover" 
-                alt="Built by clinicians who never left the operatory"
+                alt="Grey Dental Academy — evidence-based clinical education"
                 priority 
               />
             </div>
@@ -66,6 +68,8 @@ export default function AboutPage() {
 
       {/* Our Approach Section */}
       <OurApproach />
+
+      <AboutProducts />
 
       {/* Founder & Team Section */}
       <Team />
