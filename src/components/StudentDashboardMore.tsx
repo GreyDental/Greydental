@@ -46,12 +46,12 @@ const activity = [
 ];
 
 const quickActions = [
-  { label: "Join Community", href: "/community", icon: `${ASSET}/Icon (28).svg` },
-  { label: "Download Certificate", href: "/student-dashboard", icon: `${ASSET}/Container (9).svg`, boxed: true },
+  { label: "Join Community", href: "/student-dashboard/community", icon: `${ASSET}/Icon (28).svg` },
+  { label: "Download Certificate", href: "/student-dashboard/certificates", icon: `${ASSET}/Container (9).svg`, boxed: true },
   { label: "Book Workshop", href: "/workshops", icon: `${ASSET}/Icon (29).svg` },
   { label: "Ask Instructor", href: "/contact", icon: `${ASSET}/Icon (30).svg` },
   { label: "Browse Resources", href: "/resources", icon: `${ASSET}/book-open.svg` },
-  { label: "View Assignments", href: "/student-dashboard", icon: `${ASSET}/Icon (22).svg` },
+  { label: "View Assignments", href: "/student-dashboard/assignments", icon: `${ASSET}/Icon (22).svg` },
 ];
 
 const weekHours = [
@@ -178,7 +178,7 @@ export default function StudentDashboardMore() {
               </p>
             </div>
             <Link
-              href="/student-dashboard"
+              href="/student-dashboard/certificates"
               className="inline-flex items-center justify-center gap-2 w-full bg-[#5ECAA0] hover:bg-[#7ED9B5] text-black px-4 py-2.5 rounded-[10px] font-inter-medium_18pt text-[14px] transition-colors"
             >
               Download PDF

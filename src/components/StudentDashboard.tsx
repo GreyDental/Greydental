@@ -39,6 +39,7 @@ const metrics = [
     sub: "1 ready to claim",
     icon: `${ASSET}/star.svg`,
     visual: "certs" as const,
+    href: "/student-dashboard/certificates",
   },
 ];
 
