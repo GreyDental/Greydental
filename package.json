@@ -10,7 +10,8 @@
     "test:backend": "node scripts/verify-backend.mjs",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:e2e:provision": "node scripts/provision-e2e-user.mjs"
+    "test:e2e:provision": "node scripts/provision-e2e-user.mjs",
+    "setup:supabase": "node scripts/apply-supabase-setup.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -18,6 +19,7 @@
     "framer-motion": "^12.42.2",
     "lucide-react": "^1.25.0",
     "next": "16.2.10",
+    "pg": "^8.23.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "stripe": "^22.6.2"
