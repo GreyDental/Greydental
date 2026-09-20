@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import BrandLogo from "@/components/BrandLogo";
@@ -112,33 +111,6 @@ export default function LoginPage() {
     }
   }
 
-  async function continueWithGoogle() {
-    setError(null);
-    setInfo(null);
-    try {
-      const supabase = createClient();
-      const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo: oauthRedirectTo(
-            nextPath.startsWith("/") ? nextPath : "/student-dashboard",
-          ),
-          queryParams: {
-            access_type: "offline",
-            prompt: "consent",
-          },
-        },
-      });
-      if (oauthError) {
-        setError(friendlyAuthError(oauthError.message));
-        return;
-      }
-      if (data.url) {
-        window.location.assign(data.url);
-      }
-    } catch (err) {
-      setError(friendlyAuthError(err instanceof Error ? err.message : String(err)));
-    }
   }
 
   return (
@@ -176,32 +148,6 @@ export default function LoginPage() {
           <p className="text-[#777779] font-regular_18pt text-[14px] sm:text-[15px] leading-relaxed mb-6 sm:mb-7">
             Log in to access your dashboard, courses, and clinical files.
           </p>
-
-          <button
-            type="button"
-            onClick={continueWithGoogle}
-            className="inline-flex items-center justify-center gap-2.5 w-full py-3 rounded-[10px] border border-[#D5DEE2] bg-white hover:bg-[#F4F7F8] transition-colors"
-          >
-            <Image
-              src="/sign/login/Group.png"
-              alt=""
-              width={20}
-              height={20}
-              unoptimized
-              className="w-5 h-5 object-contain"
-            />
-            <span className="text-[#3A738D] font-inter-medium_18pt text-[14px] sm:text-[15px]">
-              Continue with Google
-            </span>
-          </button>
-
-          <div className="flex items-center gap-3 my-5 sm:my-6" aria-hidden="true">
-            <div className="flex-1 h-px bg-[#D5DEE2]" />
-            <span className="text-[#777779] font-regular_18pt text-[12px] tracking-wide">
-              OR
-            </span>
-            <div className="flex-1 h-px bg-[#D5DEE2]" />
-          </div>
 
           <form className="flex flex-col gap-4" onSubmit={onSubmit}>
             <div>

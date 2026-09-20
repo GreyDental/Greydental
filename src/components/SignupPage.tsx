@@ -1,7 +1,6 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import BrandLogo from "@/components/BrandLogo";
 import { friendlyAuthError } from "@/lib/auth-errors";
@@ -161,31 +160,6 @@ export default function SignupPage() {
     }
   }
 
-  async function continueWithGoogle() {
-    setError(null);
-    setMessage(null);
-    try {
-      const supabase = createClient();
-      const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo: oauthRedirectTo("/student-dashboard"),
-          queryParams: {
-            access_type: "offline",
-            prompt: "consent",
-          },
-        },
-      });
-      if (oauthError) {
-        setError(friendlyAuthError(oauthError.message));
-        return;
-      }
-      if (data.url) {
-        window.location.assign(data.url);
-      }
-    } catch (err) {
-      setError(friendlyAuthError(err instanceof Error ? err.message : String(err)));
-    }
   }
 
   return (
@@ -224,24 +198,6 @@ export default function SignupPage() {
               );
             })}
           </div>
-
-          <button
-            type="button"
-            onClick={continueWithGoogle}
-            className="inline-flex items-center justify-center gap-2.5 w-full py-3 rounded-[10px] border border-[#D5DEE2] bg-white hover:bg-[#F4F7F8] transition-colors mb-5 sm:mb-6"
-          >
-            <Image
-              src="/sign/login/Group.png"
-              alt=""
-              width={20}
-              height={20}
-              unoptimized
-              className="w-5 h-5 object-contain"
-            />
-            <span className="text-[#3A738D] font-inter-medium_18pt text-[14px] sm:text-[15px]">
-              Continue with Google
-            </span>
-          </button>
 
           <form className="flex flex-col gap-4" onSubmit={onSubmit}>
             <div>
