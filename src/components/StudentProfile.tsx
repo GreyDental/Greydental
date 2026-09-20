@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import StudentDashboardShell from "@/components/StudentDashboardShell";
+import { useCurrentUser } from "@/hooks/useCurrentUser";
 
 const ASSET = "/Student_Dashboard";
 const card =
@@ -48,16 +49,6 @@ const badges = [
   },
 ];
 
-const specializations = [
-  "Endodontics",
-  "Dental Implants",
-  "Prosthodontics",
-  "CBCT Analysis",
-  "Rotary Instrumentation",
-  "Minimally Invasive",
-  "CAD/CAM Restoration",
-];
-
 function JourneyIcon({ src }: { src: string }) {
   return (
     <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#E5F8F0] flex-shrink-0">
@@ -73,10 +64,20 @@ function JourneyIcon({ src }: { src: string }) {
 }
 
 export default function StudentProfile() {
+  const { displayName, email, roleLabel, profile, loading } = useCurrentUser();
+
+  const specializations = [profile?.specialty, profile?.institution]
+    .filter(Boolean)
+    .flatMap((value) =>
+      String(value)
+        .split(/[,/|]/)
+        .map((part) => part.trim())
+        .filter(Boolean),
+    );
+
   return (
     <StudentDashboardShell>
       <div className="flex-1 px-4 sm:px-6 lg:px-8 py-6 sm:py-7 md:py-8 w-full min-w-0 flex flex-col gap-6">
-        {/* Profile header */}
         <section className={`${card} overflow-hidden`}>
           <div
             className="h-24 sm:h-28 w-full"
@@ -90,7 +91,7 @@ export default function StudentProfile() {
             <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-5 mb-6 sm:mb-7">
               <Image
                 src={`${ASSET}/avatar.png`}
-                alt="Sarah Mitchell"
+                alt={displayName}
                 width={96}
                 height={96}
                 className="-mt-10 sm:-mt-12 w-20 h-20 sm:w-24 sm:h-24 rounded-[16px] object-cover border-4 border-white shadow-[0_4px_16px_rgba(47,95,117,0.12)] flex-shrink-0 bg-white relative z-10"
@@ -99,65 +100,26 @@ export default function StudentProfile() {
               <div className="flex-1 min-w-0 pt-1 sm:pt-3">
                 <div className="flex flex-wrap items-center gap-2 mb-1.5">
                   <h1 className="text-[#2F5F75] font-semi_bold_24pt text-[22px] sm:text-[26px] leading-tight tracking-tight">
-                    Sarah Mitchell
+                    {loading ? "Loading…" : displayName}
                   </h1>
                   <span className="inline-flex items-center gap-1 rounded-full bg-[#E5F8F0] text-[#2F5F75] font-inter-medium_18pt text-[11px] sm:text-[12px] px-2.5 py-1">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <circle cx="6" cy="6" r="6" fill="#5ECAA0" />
-                      <path
-                        d="M3.5 6.2L5.1 7.8L8.5 4.2"
-                        stroke="white"
-                        strokeWidth="1.4"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    Verified
+                    {roleLabel}
                   </span>
                 </div>
-                <p className="inline-flex items-center gap-1.5 text-[#777779] font-regular_18pt text-[13px] sm:text-[14px]">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    aria-hidden="true"
-                    className="flex-shrink-0"
-                  >
-                    <path
-                      d="M4 6.5A1.5 1.5 0 0 1 5.5 5h13A1.5 1.5 0 0 1 20 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5v-11zm1.7.5 6.3 4.2L18.3 7H5.7z"
-                      fill="#777779"
-                    />
-                  </svg>
-                  sarah.mitchell@gmail.com
+                <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[14px]">
+                  {email || "No email on file"}
                 </p>
+                {profile?.institution ? (
+                  <p className="mt-1 text-[#777779] font-regular_18pt text-[13px]">
+                    {profile.institution}
+                  </p>
+                ) : null}
               </div>
 
               <Link
                 href="/student-dashboard/settings"
                 className="inline-flex items-center justify-center gap-2 self-start sm:mt-3 px-4 py-2.5 rounded-[10px] border border-[#3A738D] text-[#3A738D] hover:bg-[#E8F1F5] font-inter-medium_18pt text-[13px] sm:text-[14px] transition-colors flex-shrink-0"
               >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M11.3 2.3a1.5 1.5 0 0 1 2.1 2.1L5.5 12.3 2 13l.7-3.5L11.3 2.3z"
-                    stroke="currentColor"
-                    strokeWidth="1.3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
                 Edit Profile
               </Link>
             </div>
@@ -180,7 +142,6 @@ export default function StudentProfile() {
           </div>
         </section>
 
-        {/* Journey + Badges */}
         <div className="flex flex-col xl:flex-row gap-6 w-full min-w-0 xl:items-start">
           <section className={`${card} flex-1 min-w-0 p-5 sm:p-6`}>
             <h2 className="text-[#2F5F75] font-semi_bold_24pt text-[17px] sm:text-[18px] leading-snug mb-5">
@@ -233,21 +194,33 @@ export default function StudentProfile() {
           </section>
         </div>
 
-        {/* Specializations */}
         <section className={`${card} p-5 sm:p-6`}>
           <h2 className="text-[#2F5F75] font-semi_bold_24pt text-[17px] sm:text-[18px] leading-snug mb-4">
             Clinical Specializations
           </h2>
-          <div className="flex flex-wrap gap-2.5">
-            {specializations.map((tag) => (
-              <span
-                key={tag}
-                className="inline-flex items-center rounded-full bg-[#E8F1F5] text-[#2F5F75] font-inter-medium_18pt text-[12px] sm:text-[13px] px-3.5 py-1.5"
+          {specializations.length > 0 ? (
+            <div className="flex flex-wrap gap-2.5">
+              {specializations.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center rounded-full bg-[#E8F1F5] text-[#2F5F75] font-inter-medium_18pt text-[12px] sm:text-[13px] px-3.5 py-1.5"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          ) : (
+            <p className="text-[#777779] font-regular_18pt text-[13px] sm:text-[14px]">
+              No specialty listed yet.{" "}
+              <Link
+                href="/student-dashboard/settings"
+                className="text-[#3A738D] hover:underline font-inter-medium_18pt"
               >
-                {tag}
-              </span>
-            ))}
-          </div>
+                Add details in Settings
+              </Link>
+              .
+            </p>
+          )}
         </section>
       </div>
     </StudentDashboardShell>

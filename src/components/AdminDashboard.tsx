@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import AdminDashboardShell from "@/components/AdminDashboardShell";
+import { useCurrentUser } from "@/hooks/useCurrentUser";
 
 const ASSET = "/Student_Dashboard";
 const card =
@@ -248,6 +249,8 @@ function MeetIcon() {
 }
 
 export default function AdminDashboard() {
+  const { firstName, loading } = useCurrentUser();
+
   return (
     <AdminDashboardShell>
       <div className="flex-1 px-4 sm:px-6 lg:px-8 py-6 sm:py-7 md:py-8 w-full min-w-0 flex flex-col gap-6">
@@ -261,7 +264,7 @@ export default function AdminDashboard() {
         >
           <div className="relative z-10 max-w-xl">
             <h1 className="text-white font-semi_bold_24pt text-[24px] sm:text-[30px] leading-tight tracking-tight mb-2">
-              Welcome Back, Admin!
+              {loading ? "Welcome back!" : `Welcome Back, ${firstName}!`}
             </h1>
             <p className="text-white/80 font-regular_18pt text-[14px] sm:text-[15px] leading-relaxed">
               Manage learning, learners, courses, and platform activity from one

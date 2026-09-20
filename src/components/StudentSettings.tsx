@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import StudentDashboardShell from "@/components/StudentDashboardShell";
+import { invalidateCurrentUserCache } from "@/hooks/useCurrentUser";
 
 const ASSET = "/Student_Dashboard";
 const card =
@@ -171,6 +172,7 @@ export default function StudentSettings() {
       });
       const json = (await res.json()) as { error?: string };
       if (!res.ok) throw new Error(json.error || "Failed to save");
+      invalidateCurrentUserCache();
       setMessage("Profile saved.");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to save");

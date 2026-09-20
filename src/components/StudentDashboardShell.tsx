@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import BrandLogo from "@/components/BrandLogo";
+import { useCurrentUser } from "@/hooks/useCurrentUser";
+import { createClient } from "@/lib/supabase/client";
 
 const ASSET = "/Student_Dashboard";
 
@@ -37,6 +39,17 @@ export default function StudentDashboardShell({
 }) {
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { displayName } = useCurrentUser();
+
+  async function handleLogout() {
+    try {
+      const supabase = createClient();
+      await supabase.auth.signOut();
+    } catch {
+      // still leave the app
+    }
+    window.location.assign("/login");
+  }
 
   return (
     <div className="h-dvh w-full min-w-0 overflow-hidden bg-[#F4F7F8]">
@@ -107,10 +120,10 @@ export default function StudentDashboardShell({
             </span>
             <span className="font-regular_18pt text-[14px]">Help Center</span>
           </Link>
-          <Link
-            href="/login"
-            onClick={() => setSidebarOpen(false)}
-            className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] text-white/65 hover:bg-white/10 hover:text-white transition-colors"
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] text-white/65 hover:bg-white/10 hover:text-white transition-colors text-left w-full"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path
@@ -122,7 +135,7 @@ export default function StudentDashboardShell({
               />
             </svg>
             <span className="font-regular_18pt text-[14px]">Logout</span>
-          </Link>
+          </button>
         </div>
       </aside>
 
@@ -188,13 +201,22 @@ export default function StudentDashboardShell({
                 className="w-[18px] h-[18px]"
               />
             </button>
-            <Image
-              src={`${ASSET}/avatar.png`}
-              alt="Dr. Sarah"
-              width={40}
-              height={40}
-              className="w-10 h-10 rounded-full object-cover ring-2 ring-white border border-[#D5DEE2]"
-            />
+            <Link
+              href="/student-dashboard/profile"
+              className="flex items-center gap-2.5 min-w-0"
+              title={displayName}
+            >
+              <Image
+                src={`${ASSET}/avatar.png`}
+                alt={displayName}
+                width={40}
+                height={40}
+                className="w-10 h-10 rounded-full object-cover ring-2 ring-white border border-[#D5DEE2]"
+              />
+              <span className="hidden md:block text-[#2F5F75] font-inter-medium_18pt text-[13px] truncate max-w-[120px]">
+                {displayName}
+              </span>
+            </Link>
           </div>
         </header>
 

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import StudentDashboardMore from "@/components/StudentDashboardMore";
 import StudentDashboardShell from "@/components/StudentDashboardShell";
+import { useCurrentUser } from "@/hooks/useCurrentUser";
 
 const ASSET = "/Student_Dashboard";
 
@@ -71,6 +72,8 @@ function asset(name: string) {
 const cardShadow = "shadow-[0_8px_30px_rgba(47,95,117,0.06)]";
 
 export default function StudentDashboard() {
+  const { firstName, loading } = useCurrentUser();
+
   return (
     <StudentDashboardShell>
         <div className="flex-1 px-4 sm:px-6 lg:px-8 py-6 sm:py-7 md:py-8 w-full min-w-0 flex flex-col gap-5 sm:gap-6">
@@ -91,7 +94,7 @@ export default function StudentDashboard() {
 
               <div className="flex flex-col flex-1 min-w-0 relative z-10">
                 <h1 className="text-[26px] sm:text-[30px] md:text-[34px] font-semi_bold_24pt text-[#2F5F75] leading-[1.2] tracking-tight mb-2.5 sm:mb-3">
-                  Welcome Back, Dr. Sarah!
+                  {loading ? "Welcome back!" : `Welcome Back, ${firstName}!`}
                 </h1>
                 <p className="text-[#777779] font-regular_18pt text-[14px] sm:text-[15px] leading-relaxed max-w-md mb-6 sm:mb-7">
                   Continue building your clinical skills and stay on track with

@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import BrandLogo from "@/components/BrandLogo";
+import { useCurrentUser } from "@/hooks/useCurrentUser";
+import { createClient } from "@/lib/supabase/client";
 
 const ASSET = "/Student_Dashboard";
 
@@ -37,6 +39,17 @@ export default function AdminDashboardShell({
 }) {
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { displayName, roleLabel } = useCurrentUser();
+
+  async function handleLogout() {
+    try {
+      const supabase = createClient();
+      await supabase.auth.signOut();
+    } catch {
+      // still leave the app
+    }
+    window.location.assign("/login");
+  }
 
   return (
     <div className="h-dvh w-full min-w-0 overflow-hidden bg-[#F4F7F8]">
@@ -107,10 +120,10 @@ export default function AdminDashboardShell({
             </span>
             <span className="font-regular_18pt text-[14px]">Help Center</span>
           </Link>
-          <Link
-            href="/login"
-            onClick={() => setSidebarOpen(false)}
-            className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] text-white/65 hover:bg-white/10 hover:text-white transition-colors"
+          <button
+            type="button"
+            onClick={handleLogout}
+            className="flex items-center gap-3 px-3.5 py-2.5 rounded-[12px] text-white/65 hover:bg-white/10 hover:text-white transition-colors text-left w-full"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
               <path
@@ -122,7 +135,7 @@ export default function AdminDashboardShell({
               />
             </svg>
             <span className="font-regular_18pt text-[14px]">Logout</span>
-          </Link>
+          </button>
         </div>
       </aside>
 
@@ -231,26 +244,26 @@ export default function AdminDashboardShell({
                 className="w-[18px] h-[18px]"
               />
             </button>
-            <div className="hidden sm:flex items-center gap-2.5 pl-1">
+            <div className="hidden sm:flex items-center gap-2.5 pl-1 min-w-0">
               <Image
-                src="/Instructors/faculty-julian.jpg"
-                alt="Admin User"
+                src="/Student_Dashboard/avatar.png"
+                alt={displayName}
                 width={40}
                 height={40}
                 className="w-10 h-10 rounded-full object-cover ring-2 ring-white border border-[#D5DEE2]"
               />
               <div className="min-w-0 leading-tight">
-                <p className="text-[#2F5F75] font-inter-medium_18pt text-[13px] truncate">
-                  Admin User
+                <p className="text-[#2F5F75] font-inter-medium_18pt text-[13px] truncate max-w-[140px]">
+                  {displayName}
                 </p>
                 <p className="text-[#777779] font-regular_18pt text-[11px]">
-                  Administrator
+                  {roleLabel}
                 </p>
               </div>
             </div>
             <Image
-              src="/Instructors/faculty-julian.jpg"
-              alt="Admin User"
+              src="/Student_Dashboard/avatar.png"
+              alt={displayName}
               width={40}
               height={40}
               className="sm:hidden w-10 h-10 rounded-full object-cover ring-2 ring-white border border-[#D5DEE2]"
