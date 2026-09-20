@@ -10,12 +10,13 @@ Last updated: 2026-09-19 (auth signup/login fixes)
 
 ### 0. Fix Auth so signup / login works (do this first)
 
-Registration is currently failing with **email rate limit** because Supabase “Confirm email” is ON and every signup tries to send mail.
+Registration currently fails to auto-login when Supabase **Confirm email** is ON (no session until the inbox link is clicked).
 
 In [Supabase Dashboard](https://supabase.com/dashboard) → your project:
 
 1. **Authentication → Providers → Email**
-   - Turn **OFF** “Confirm email” while developing / presenting
+   - Turn **OFF** “Confirm email” while developing / presenting  
+   - (Or add `SUPABASE_SERVICE_ROLE_KEY` to Vercel + `.env.local` — the app will create confirmed users and sign them in immediately.)
 2. **Authentication → URL Configuration**
    - **Site URL:** `https://grey-coral.vercel.app`
    - **Redirect URLs** (add all):
@@ -23,10 +24,13 @@ In [Supabase Dashboard](https://supabase.com/dashboard) → your project:
      - `https://grey-coral.vercel.app/auth/callback`
      - `http://localhost:3000/**`
      - `http://localhost:3000/auth/callback`
-3. (Optional) **Authentication → Providers → Google** — enable only if you want “Continue with Google”
+3. **Google sign-in (required for the Google button)**  
+   - [Google Cloud Console](https://console.cloud.google.com/apis/credentials) → create OAuth 2.0 Client (Web)  
+   - Authorized redirect URI: `https://gpxqeubjlvhmziqrrsll.supabase.co/auth/v1/callback`  
+   - Supabase → **Authentication → Providers → Google** → enable → paste Client ID + Secret  
 4. If someone already signed up but can’t log in: Authentication → Users → open user → **Confirm** manually
 
-After step 1, new signups get a session immediately and land on `/student-dashboard`.
+After step 1 (or service role on Vercel), signup goes straight to the student dashboard.
 
 ### 1. Run these SQL files in Supabase (SQL Editor)
 

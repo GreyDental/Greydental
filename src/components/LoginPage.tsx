@@ -3,12 +3,13 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import BrandLogo from "@/components/BrandLogo";
 import {
   friendlyAuthError,
   isEmailNotConfirmed,
 } from "@/lib/auth-errors";
+import { goToApp, oauthRedirectTo } from "@/lib/auth-navigation";
 import { createClient } from "@/lib/supabase/client";
 
 const inputClass =
@@ -18,7 +19,6 @@ const labelClass =
   "block text-[#2F5F75] font-inter-medium_18pt text-[13px] sm:text-[14px] mb-1.5";
 
 export default function LoginPage() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const nextPath = useMemo(
     () => searchParams.get("next") || "/student-dashboard",
@@ -70,14 +70,12 @@ export default function LoginPage() {
           .maybeSingle();
 
         if (profile?.role === "admin") {
-          router.push("/admin-dashboard");
-          router.refresh();
+          goToApp("/admin-dashboard");
           return;
         }
       }
 
-      router.push(nextPath.startsWith("/") ? nextPath : "/student-dashboard");
-      router.refresh();
+      goToApp(nextPath.startsWith("/") ? nextPath : "/student-dashboard");
     } catch (err) {
       setError(friendlyAuthError(err instanceof Error ? err.message : String(err)));
       setLoading(false);
@@ -99,7 +97,7 @@ export default function LoginPage() {
         type: "signup",
         email: trimmed,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
+          emailRedirectTo: oauthRedirectTo("/student-dashboard"),
         },
       });
       if (resendError) {
@@ -119,14 +117,24 @@ export default function LoginPage() {
     setInfo(null);
     try {
       const supabase = createClient();
-      const { error: oauthError } = await supabase.auth.signInWithOAuth({
+      const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextPath)}`,
+          redirectTo: oauthRedirectTo(
+            nextPath.startsWith("/") ? nextPath : "/student-dashboard",
+          ),
+          queryParams: {
+            access_type: "offline",
+            prompt: "consent",
+          },
         },
       });
       if (oauthError) {
         setError(friendlyAuthError(oauthError.message));
+        return;
+      }
+      if (data.url) {
+        window.location.assign(data.url);
       }
     } catch (err) {
       setError(friendlyAuthError(err instanceof Error ? err.message : String(err)));

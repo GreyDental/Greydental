@@ -3,9 +3,9 @@
 import { FormEvent, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import BrandLogo from "@/components/BrandLogo";
 import { friendlyAuthError } from "@/lib/auth-errors";
+import { goToApp, oauthRedirectTo } from "@/lib/auth-navigation";
 import { createClient } from "@/lib/supabase/client";
 
 const inputClass =
@@ -28,7 +28,6 @@ const panelCopy: Record<Role, { title: string; body: string }> = {
 };
 
 export default function SignupPage() {
-  const router = useRouter();
   const [role, setRole] = useState<Role>("student");
   const [agreed, setAgreed] = useState(true);
   const [fullName, setFullName] = useState("");
@@ -64,13 +63,56 @@ export default function SignupPage() {
     }
 
     setLoading(true);
+    const trimmedEmail = email.trim();
+
     try {
       const supabase = createClient();
+
+      // Prefer server provision (confirmed user) when service role is configured
+      const provisionRes = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: trimmedEmail,
+          password,
+          full_name: fullName.trim(),
+          role,
+          institution: isInstructor ? institution.trim() : "",
+          specialty: isInstructor ? specialty.trim() : "",
+          license_number: isInstructor ? license.trim() : "",
+        }),
+      });
+      const provision = (await provisionRes.json()) as {
+        mode?: string;
+        ok?: boolean;
+        error?: string;
+      };
+
+      if (provision.mode === "provisioned" && provisionRes.ok) {
+        const { error: signInError } = await supabase.auth.signInWithPassword({
+          email: trimmedEmail,
+          password,
+        });
+        if (signInError) {
+          setError(friendlyAuthError(signInError.message));
+          setLoading(false);
+          return;
+        }
+        goToApp("/student-dashboard");
+        return;
+      }
+
+      if (provision.error && provisionRes.status !== 200) {
+        setError(friendlyAuthError(provision.error));
+        setLoading(false);
+        return;
+      }
+
       const { data, error: signUpError } = await supabase.auth.signUp({
-        email: email.trim(),
+        email: trimmedEmail,
         password,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
+          emailRedirectTo: oauthRedirectTo("/student-dashboard"),
           data: {
             full_name: fullName.trim(),
             role,
@@ -87,8 +129,6 @@ export default function SignupPage() {
         return;
       }
 
-      // Supabase can return a fake user with empty identities when the email
-      // already exists (to avoid account enumeration).
       const alreadyRegistered =
         Array.isArray(data.user?.identities) && data.user.identities.length === 0;
 
@@ -98,16 +138,23 @@ export default function SignupPage() {
         return;
       }
 
-      if (data.session) {
-        router.push("/student-dashboard");
-        router.refresh();
-        return;
+      // Always establish a browser session, then hard-navigate so middleware sees cookies
+      if (!data.session) {
+        const { error: signInError } = await supabase.auth.signInWithPassword({
+          email: trimmedEmail,
+          password,
+        });
+        if (signInError) {
+          setError(
+            friendlyAuthError(signInError.message) +
+              " If you just registered, turn off “Confirm email” in Supabase Auth → Providers → Email so signup can sign you in automatically.",
+          );
+          setLoading(false);
+          return;
+        }
       }
 
-      setMessage(
-        "Account created. Check your email to confirm, then log in. If no email arrives, disable “Confirm email” in Supabase Auth while testing, or wait a few minutes and try again.",
-      );
-      setLoading(false);
+      goToApp("/student-dashboard");
     } catch (err) {
       setError(friendlyAuthError(err instanceof Error ? err.message : String(err)));
       setLoading(false);
@@ -119,14 +166,22 @@ export default function SignupPage() {
     setMessage(null);
     try {
       const supabase = createClient();
-      const { error: oauthError } = await supabase.auth.signInWithOAuth({
+      const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
+          redirectTo: oauthRedirectTo("/student-dashboard"),
+          queryParams: {
+            access_type: "offline",
+            prompt: "consent",
+          },
         },
       });
       if (oauthError) {
         setError(friendlyAuthError(oauthError.message));
+        return;
+      }
+      if (data.url) {
+        window.location.assign(data.url);
       }
     } catch (err) {
       setError(friendlyAuthError(err instanceof Error ? err.message : String(err)));
