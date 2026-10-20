@@ -111,8 +111,6 @@ export default function LoginPage() {
     }
   }
 
-  }
-
   return (
     <div className="min-h-dvh w-full flex flex-col lg:flex-row bg-white">
       <aside

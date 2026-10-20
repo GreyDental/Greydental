@@ -8,9 +8,13 @@
     "start": "next start",
     "lint": "eslint",
     "test:backend": "node scripts/verify-backend.mjs",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e:provision": "node scripts/provision-e2e-user.mjs",
+    "docs:build": "python scripts/build-docs.py",
+    "docs:toc": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/refresh-docx-toc.ps1 && python scripts/compact-docx.py",
     "setup:supabase": "node scripts/apply-supabase-setup.mjs"
   },
   "dependencies": {
@@ -33,6 +37,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.4"
   }
 }

@@ -160,8 +160,6 @@ export default function SignupPage() {
     }
   }
 
-  }
-
   return (
     <div className="min-h-dvh w-full flex flex-col lg:flex-row bg-white">
       <div className="flex flex-1 min-w-0 items-start lg:items-center justify-center px-4 sm:px-8 py-10 sm:py-14 lg:py-16 overflow-y-auto">

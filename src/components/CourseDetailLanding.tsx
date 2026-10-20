@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import LectureVideo from "@/components/LectureVideo";
 
 const priceFeatures = [
   { icon: "/Specific_Course_Page/modules.svg", label: "11 modules" },
@@ -115,25 +116,13 @@ export default function CourseDetailLanding() {
 
         {/* Media + pricing */}
         <div className="flex flex-col lg:flex-row gap-5 sm:gap-6 lg:gap-8 items-stretch w-full min-w-0">
-          {/* Video / image */}
-          <div className="relative flex w-full lg:flex-1 min-w-0 min-h-[240px] sm:min-h-[320px] lg:min-h-[420px] rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(58,115,141,0.12)]">
-            <Image
-              src="/Specific_Course_Page/hero.png"
-              alt="Foundations of Endodontics course preview"
-              fill
-              sizes="(max-width: 1024px) 100vw, 60vw"
-              className="object-cover"
+          {/* Lecture video / image */}
+          <div className="relative flex w-full lg:flex-1 min-w-0 rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-[0_12px_40px_rgba(58,115,141,0.12)]">
+            <LectureVideo
+              title="Foundations of Clinical Endodontics lecture preview"
+              className="min-h-[240px] sm:min-h-[320px] lg:min-h-[420px]"
               priority
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Image
-                src="/Specific_Course_Page/play.svg"
-                alt="Play preview"
-                width={74}
-                height={71}
-                className="w-14 h-14 sm:w-[74px] sm:h-[71px] drop-shadow-lg"
-              />
-            </div>
           </div>
 
           {/* Pricing card */}

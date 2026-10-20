@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { scoreAnswers } from "@/lib/scoring";
 import type {
   AssessmentListItem,
   PublicQuestion,
@@ -169,11 +170,7 @@ export async function submitAssessment(input: {
   const list = questions ?? [];
   if (list.length === 0) throw new Error("No questions found");
 
-  let correct = 0;
-  for (const q of list) {
-    if (input.answers[q.id] === q.correct_index) correct += 1;
-  }
-  const score = Math.round((correct / list.length) * 100);
+  const score = scoreAnswers(list, input.answers);
 
   const payload = {
     assessment_id: input.assessmentId,

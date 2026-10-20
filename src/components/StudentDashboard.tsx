@@ -5,6 +5,7 @@ import Link from "next/link";
 import StudentDashboardMore from "@/components/StudentDashboardMore";
 import StudentDashboardShell from "@/components/StudentDashboardShell";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
+import { LECTURE_VIDEO_SRC } from "@/lib/video";
 
 const ASSET = "/Student_Dashboard";
 
@@ -313,9 +314,21 @@ export default function StudentDashboard() {
                 <p className="text-[#777779] font-regular_18pt text-[13px] leading-snug">
                   Dr. John Smith
                 </p>
-                <p className="text-[#777779] font-regular_18pt text-[13px] leading-snug mb-4">
-                  Clinical Demo Video
-                </p>
+                <a
+                  href={LECTURE_VIDEO_SRC}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 self-start text-[#3A738D] hover:text-[#2F5F75] font-regular_18pt text-[13px] leading-snug mb-4 transition-colors"
+                >
+                  <Image
+                    src="/play-square.png"
+                    alt=""
+                    width={14}
+                    height={14}
+                    className="w-3.5 h-3.5"
+                  />
+                  Watch lecture — Clinical Demo Video
+                </a>
 
                 <div className="flex items-center justify-between gap-3 mb-1.5">
                   <span className="text-[#2F5F75] font-inter-medium_18pt text-[13px]">

@@ -34,6 +34,8 @@ Main workflows:
 - **Content access:** student dashboard pages call `/api/courses`, `/api/workshops`, `/api/resources` and render seeded data.
 - **Assessment:** student opens `/student-dashboard/assessments/[id]` → MCQ questions loaded from Supabase → on submit, score stored; leaving the tab auto-scores 0 (anti-cheat).
 
+Generated architecture diagrams live in [`docs/diagrams/`](docs/diagrams/): system context, request lifecycle, purchase/enrollment flow, and data model. Rebuild them with `npm run docs:build`.
+
 ## 3. Technology Stack
 
 | Technology | Why it is used |
@@ -47,8 +49,11 @@ Main workflows:
 | framer-motion | Animations on landing pages |
 | lucide-react | Icons |
 | Playwright | End-to-end browser tests |
+| Vitest | Unit tests for pure logic in `src/lib/` |
+| HTML5 `<video>` | Lecture playback from `public/videos/`; no third-party hosting or DRM |
 | ESLint + eslint-config-next | Linting |
 | `pg` | Direct Postgres access used by setup scripts |
+| Python (`python-docx`, Pillow) | Generates the architecture diagrams and the Word document |
 
 ## 4. Repository Structure
 
@@ -66,9 +71,12 @@ Greydental/
 │   ├── lib/                    # Server/client utilities (see Section 6)
 │   └── middleware.ts           # Session refresh + route protection
 ├── supabase/                   # SQL schemas and seed data
-├── scripts/                    # Node scripts: setup, provisioning, verification
+├── scripts/                    # Node scripts + build-docs.py
 ├── e2e/                        # Playwright specs and global setup
 ├── public/                     # Static assets
+│   └── videos/                 # Lecture video (lecture.mp4)
+├── docs/                       # Documentation and generated diagrams
+│   └── diagrams/               # PNG architecture diagrams
 ├── .env.example                # Template for environment variables
 ├── USER_TODO.md                # Manual Supabase/env steps (human-owned)
 └── playwright.config.ts
@@ -193,6 +201,17 @@ The core of the system is the request path through **middleware → Supabase ses
 - **Outputs:** UI pages.
 - **Artifacts:** React Query-style fetch state only; all persistence via Supabase.
 
+### Component: Lecture video
+
+- **Location:** `src/components/LectureVideo.tsx`, `src/lib/video.ts`, `public/videos/lecture.mp4`
+- **Role:** Plays the lecture recording inline on the course detail page and gives the student and admin dashboards one shared link to the same recording.
+- **Inputs:**
+  - `src` (optional) — video URL; defaults to `/videos/lecture.mp4`.
+  - `poster`, `title`, `className`, `priority` — preview image, accessible name, layout classes, and poster preload flag.
+- **Processing:** resolve the URL with `lectureVideoUrl()` → render poster + play button → on click, swap in `<video controls autoplay playsinline>` → stream the static MP4 from `public/`.
+- **Outputs:** inline player on the course page; `/videos/lecture.mp4` links from the student dashboard and admin on-demand cards.
+- **Artifacts:** none. The MP4 is a static input supplied manually (see `public/videos/README.md`).
+
 ### Component: Take assessment
 
 - **Location:** `src/components/TakeAssessmentPage.tsx`, `src/app/student-dashboard/assessments/[id]/page.tsx`, `src/app/api/assessments/route.ts`, `src/app/api/assessments/[id]/route.ts`
@@ -254,6 +273,7 @@ The core of the system is the request path through **middleware → Supabase ses
 - **Access:** browser (auth only), Next.js server via `@supabase/ssr` with RLS; scripts via `pg` / service role.
 - **Tables:** see Section 6 type list; relationships: `enrollments.user_id → profiles.id`, `enrollments.course_id → courses.id`, `orders.user_id → profiles.id`, `workshop_registrations` join table, `assessments → courses`, `certificates → enrollments/profiles`.
 - **RLS:** students read their own rows; admins can list learners (added in `schema_rls_fixes.sql`).
+- **Foreign keys:** `enrollments.user_id → profiles.id`, `enrollments.course_id → courses.id`, `orders.user_id → profiles.id`, `orders.course_id → courses.id`, `resources.course_id → courses.id`, `workshop_registrations.workshop_id → workshops.id`, `workshop_registrations.user_id → profiles.id`, `assessments.course_id → courses.id`, `assessment_questions.assessment_id → assessments.id`, `assessment_submissions.assessment_id → assessments.id`, `assessment_submissions.user_id → profiles.id`, `certificates.user_id → profiles.id`, `certificates.course_id → courses.id`.
 
 ## 10. Frontend / Entry Points
 
@@ -266,8 +286,9 @@ How to run the system, in order:
 5. `npm run build` / `npm start` for a production build.
 6. `npm run lint` for linting.
 7. `npm run test:backend` to verify Supabase connectivity.
-8. `npm run test:e2e` for Playwright browser tests (`E2E_BASE_URL` controls the target).
-9. `npm run setup:supabase` and `npm run test:e2e:provision` are helper scripts for schema setup and test-user provisioning.
+8. `npm run test:unit` for Vitest unit tests.
+9. `npm run test:e2e` for Playwright browser tests (`E2E_BASE_URL` controls the target).
+10. `npm run setup:supabase` and `npm run test:e2e:provision` are helper scripts for schema setup and test-user provisioning.
 
 Key entry files:
 
@@ -284,6 +305,9 @@ Key entry files:
 | `tsconfig.tsbuildinfo` | repo root | Incremental compiler cache |
 | Server logs | Vercel function logs / local stdout | Per platform retention |
 | Uploaded files | External storage (`resources.file_url`) | Managed in Supabase storage |
+| Architecture diagrams | `docs/diagrams/*.png` | Committed; regenerated by `scripts/build-docs.py` |
+| Word documentation | `docs/Grey_Dental_Technical_Documentation.docx` | Committed; regenerated from the Markdown |
+| Lecture video | `public/videos/lecture.mp4` | Supplied manually and served as a static asset |
 
 Nothing is written to disk by API routes themselves.
 
@@ -294,6 +318,7 @@ Nothing is written to disk by API routes themselves.
 3. **Purchase flow:** `/checkout` → `POST /api/checkout` → (demo) `completeEnrollmentPurchase` inserts `orders` + `enrollments` → student sees enrollment at `/student-dashboard/courses`; (live) Stripe session → webhook → same function.
 4. **Assessment flow:** `/student-dashboard/assessments/[id]` → GET assessment + questions → submit → POST result → `assessment_submissions` row; tab-hide event sets score 0 + cheat flag.
 5. **Admin flow:** admin pages → `/api/learners`, `/api/resources` POST, etc. → RLS checks `role='admin'` → table updates.
+6. **Lecture playback:** course detail page or dashboard link → Next.js static file handler → `public/videos/lecture.mp4` → native HTML5 player. No API route is involved.
 
 ## 13. Remaining Work
 
@@ -302,7 +327,8 @@ Nothing is written to disk by API routes themselves.
 - Google OAuth client must be created in Google Cloud Console and added to Supabase before the Google button works.
 - E2E credentials (`E2E_*`) are blank; authenticated dashboard tests only run once accounts exist or `SUPABASE_SERVICE_ROLE_KEY` provisioning is run.
 - Certificate generation templates exist (`certificate_templates`) but the issuance UI is minimal.
-- No video upload pipeline; resources link out to external URLs.
+- No video upload pipeline. Every lecture surface points at one manually supplied file, `public/videos/lecture.mp4`; there is no per-module mapping, transcoding, or streaming service.
+- The Word document and diagrams are generated by `scripts/build-docs.py`. Rerun it after structural changes, then run `npm run docs:toc` (Windows with Word installed) or update the table-of-contents field manually in Word.
 
 ## 14. Known Limitations
 
@@ -312,6 +338,8 @@ Nothing is written to disk by API routes themselves.
 - Courses are currently a single catalog (`endodontics-remote` demo data); multi-course purchasing is untested.
 - The app is deployed at a hardcoded Vercel URL (`grey-coral.vercel.app`) in defaults and `USER_TODO.md`; changing the domain requires updating Site URL/redirects in Supabase.
 - `.env.local` is present in the working tree; ensure it is never committed (covered by `.gitignore` — verify before publishing).
+- All lecture links share the single file `/videos/lecture.mp4`. Courses and modules cannot select different recordings yet.
+- The generated Word file contains a Word field for the table of contents; run `npm run docs:toc` (Windows + Word) after regenerating, or update the field manually, to populate the page numbers.
 
 ## 15. Getting Started
 
@@ -324,7 +352,9 @@ Goal: a new developer installs and runs the system on their own.
 5. In Supabase Auth, disable "Confirm email" for local development.
 6. Set your account's `profiles.role = 'admin'` if you need admin access.
 7. `npm run dev` → open `http://localhost:3000` → create an account → visit `/student-dashboard`.
-8. Verify: `npm run test:backend`, `npm run lint`, `npm run test:e2e`.
+8. Put the lecture recording at `public/videos/lecture.mp4` (see `public/videos/README.md`).
+9. Verify: `npm run test:backend`, `npm run lint`, `npm run test:unit`, `npm run test:e2e`.
+10. Optional: `npm run docs:build` regenerates `docs/diagrams/*.png` and the Word document; `npm run docs:toc` refreshes its table of contents.
 
 Read the source in this order to learn the system:
 
@@ -336,5 +366,6 @@ Read the source in this order to learn the system:
 6. `src/components/CheckoutPage.tsx` and `src/app/checkout/page.tsx` — page wiring.
 7. `src/app/admin-dashboard/page.tsx` + `src/components/AdminDashboard.tsx` — admin surface.
 8. `src/components/TakeAssessmentPage.tsx` — assessment + anti-cheat logic.
-9. `e2e/smoke.spec.ts` — what is considered working.
-10. `USER_TODO.md` — operational checklist.
+9. `src/components/LectureVideo.tsx` + `src/lib/video.ts` — lecture playback wiring.
+10. `e2e/smoke.spec.ts` — what is considered working.
+11. `USER_TODO.md` — operational checklist.

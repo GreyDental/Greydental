@@ -4,9 +4,9 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AdminDashboardShell from "@/components/AdminDashboardShell";
+import { LECTURE_VIDEO_SRC } from "@/lib/video";
 
 const ASSET = "/Student-Workshop";
-const DASH = "/Student_Dashboard";
 const card =
   "bg-white border border-[#D5DEE2] rounded-[16px] shadow-[0_8px_30px_rgba(47,95,117,0.06)]";
 
@@ -313,7 +313,13 @@ export default function AdminWorkshops() {
                 key={v.title}
                 className={`${card} overflow-hidden flex flex-col`}
               >
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-[#E8ECED]">
+                <a
+                  href={LECTURE_VIDEO_SRC}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Watch ${v.title}`}
+                  className="relative block w-full aspect-[16/10] overflow-hidden bg-[#E8ECED]"
+                >
                   <Image
                     src={v.thumb}
                     alt={v.title}
@@ -322,7 +328,7 @@ export default function AdminWorkshops() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover object-center"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                  <span className="absolute inset-0 flex items-center justify-center bg-black/20">
                     <Image
                       src="/play-square.png"
                       alt=""
@@ -331,8 +337,8 @@ export default function AdminWorkshops() {
                       unoptimized
                       className="w-12 h-12 object-contain drop-shadow-md"
                     />
-                  </div>
-                </div>
+                  </span>
+                </a>
                 <div className="p-4 sm:p-5 flex flex-col flex-1">
                   <span className="inline-flex self-start rounded-[6px] bg-[#E8F1F5] text-[#3A738D] font-inter-medium_18pt text-[10px] tracking-wide uppercase px-2 py-1 mb-2.5">
                     {v.tag}
@@ -354,12 +360,22 @@ export default function AdminWorkshops() {
                       {v.duration} • {v.views}
                     </span>
                   </div>
-                  <Link
-                    href="/admin-dashboard/workshops/edit"
-                    className="mt-auto self-start text-[#3A738D] font-inter-medium_18pt text-[13px] hover:underline"
-                  >
-                    Edit
-                  </Link>
+                  <div className="mt-auto flex items-center gap-4">
+                    <a
+                      href={LECTURE_VIDEO_SRC}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[#3A738D] font-inter-medium_18pt text-[13px] hover:underline"
+                    >
+                      Watch
+                    </a>
+                    <Link
+                      href="/admin-dashboard/workshops/edit"
+                      className="text-[#3A738D] font-inter-medium_18pt text-[13px] hover:underline"
+                    >
+                      Edit
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}
