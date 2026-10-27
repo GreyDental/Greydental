@@ -57,9 +57,18 @@ describe("friendlyAuthError", () => {
     );
   });
 
+  it("explains an unreachable authentication server", () => {
+    expect(friendlyAuthError("Failed to fetch")).toContain(
+      "Cannot reach the authentication server",
+    );
+    expect(friendlyAuthError("Network request failed")).toContain(
+      "NEXT_PUBLIC_SUPABASE_URL",
+    );
+  });
+
   it("passes unknown messages through unchanged", () => {
-    expect(friendlyAuthError("Network request failed")).toBe(
-      "Network request failed",
+    expect(friendlyAuthError("Unexpected auth error")).toBe(
+      "Unexpected auth error",
     );
   });
 });

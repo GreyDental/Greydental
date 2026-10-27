@@ -7,6 +7,14 @@ export function friendlyAuthError(message: string | null | undefined): string {
   if (!raw) return "Something went wrong. Please try again.";
 
   if (
+    lower === "failed to fetch" ||
+    lower.includes("network request failed") ||
+    lower.includes("fetch failed")
+  ) {
+    return "Cannot reach the authentication server. Check that your Supabase project is active and NEXT_PUBLIC_SUPABASE_URL points to its Project URL.";
+  }
+
+  if (
     lower.includes("rate limit") ||
     lower.includes("over_email_send_rate_limit") ||
     lower.includes("email rate limit")

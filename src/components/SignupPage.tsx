@@ -137,20 +137,13 @@ export default function SignupPage() {
         return;
       }
 
-      // Always establish a browser session, then hard-navigate so middleware sees cookies
+      // With email confirmation enabled, Supabase creates the user without a session.
       if (!data.session) {
-        const { error: signInError } = await supabase.auth.signInWithPassword({
-          email: trimmedEmail,
-          password,
-        });
-        if (signInError) {
-          setError(
-            friendlyAuthError(signInError.message) +
-              " If you just registered, turn off “Confirm email” in Supabase Auth → Providers → Email so signup can sign you in automatically.",
-          );
-          setLoading(false);
-          return;
-        }
+        setPassword("");
+        setConfirmPassword("");
+        setMessage("Check your email to confirm your account. After confirming, you can log in.");
+        setLoading(false);
+        return;
       }
 
       goToApp("/student-dashboard");
